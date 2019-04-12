@@ -52,9 +52,10 @@
     <div class="container"><br/><br/>
         
         <h1 align="center">Sedes</h1><br/>
-        
-        <button type="button" class="btn btn-primary">Cadastrar</button><br/><br/>        
-        
+                
+        <a class="btn btn-primary btn-sm" href="#" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
+        </a><br/><br/>        
+
         <table class="table">
             <tr>
                 <th>Nome Fantasia</th>
@@ -72,7 +73,14 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><i class="far fa-edit"></i><i class="far fa-trash-alt"></i></td>
+                <td>
+                    <a class="btn btn-info btn-sm" href="#" role="button">
+                        <i class="far fa-edit"></i>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="#" role="button">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </td>
             </tr>
         </table>
     </div>
