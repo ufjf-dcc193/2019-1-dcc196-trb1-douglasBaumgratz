@@ -52,7 +52,7 @@
             <input name="data_inicio" type="text" class="form-control form-group">
             <label>Data fim:</label>
             <input name="data_fim" type="text" class="form-control form-group">            
-            <div class="text-right">
+            <div class="text-right"><br/>
               <button type="submit" class="btn btn-primary btm-sm">OK</button>              
               <a class="btn btn-danger" href="atividade.html">Cancelar</a>
             </div>

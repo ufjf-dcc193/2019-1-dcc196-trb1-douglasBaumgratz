@@ -54,7 +54,7 @@
             <input name="data_entrada" type="text" class="form-control form-group">
             <label>Data saída:</label>
             <input name="data_saida" type="text" class="form-control form-group">            
-            <div class="text-right">
+            <div class="text-right"><br/>
               <button type="submit" class="btn btn-primary btm-sm">OK</button>              
               <a class="btn btn-danger" href="membro.html">Cancelar</a>
             </div>
