@@ -36,7 +36,7 @@ public class Sede {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "DEU CERTO SEDE";
     }
     
     /**

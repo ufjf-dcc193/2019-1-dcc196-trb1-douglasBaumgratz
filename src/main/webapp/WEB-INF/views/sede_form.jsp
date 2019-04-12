@@ -39,11 +39,11 @@
         </div>
     </nav>
 
-    <div class="container"><br/><br/>
-        
-        <h1 align="center">Sedes</h1><br/>
-                
-        <form class="text-left" method="POST">            
+    <div class="container"><br /><br />
+
+        <h1 align="center">Sedes</h1><br />
+
+        <form class="text-left" action="cadastrar_sede.html" method="POST">
             <label>Nome:</label>
             <input type="text" name="name" class="form-control form-group">
             <label>Endereço:</label>
@@ -55,10 +55,10 @@
             <label>Estado:</label>
             <input name="estado" type="text" class="form-control form-group">
             <label>Telefone:</label>
-            <input name="telefone" type="text" class="form-control form-group">            
-            <div class="text-right"><br/>
-              <button type="submit" class="btn btn-primary btm-sm">OK</button>              
-              <a class="btn btn-danger" href="sede.html">Cancelar</a>
+            <input name="telefone" type="text" class="form-control form-group">
+            <div class="text-right"><br />
+                <button type="submit" class="btn btn-primary btm-sm">OK</button>
+                <a class="btn btn-danger" href="sede.html">Cancelar</a>
             </div>
         </form>
 

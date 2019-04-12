@@ -42,6 +42,7 @@
     <div class="container"><br/><br/>
         
         <h1 align="center">Sedes</h1><br/>
+        <!-- <h1 align="center">${variavel}</h1><br/> -->
                 
         <a class="btn btn-primary btn-sm" href="sede_form.html" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
         </a><br/><br/>        
@@ -57,12 +58,12 @@
                 <th>Ações</th>
             </tr>
             <tr>
-                <td>a</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>${sede1.getNome_fantasia()}</td>
+                <td>${sede1.getEndereco()}</td>
+                <td>${sede1.getCidade()}</td>
+                <td>${sede1.getBairro()}</td>
+                <td>${sede1.getEstado()}</td>
+                <td>${sede1.getTelefone()}</td>
                 <td>
                     <a class="btn btn-info btn-sm" href="#" role="button">
                         <i class="far fa-edit"></i>
