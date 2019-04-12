@@ -1,17 +1,57 @@
 package br.ufjf.dcc193.ongplus;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Sede
  * 
  */
+@Entity
 public class Sede {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     private String nome_fantasia;
     private String estado;
     private String cidade;
     private String bairro;
     private int telefone;
     private String endereco;
+
+    public Sede() {
+        
+    }
+
+    public Sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone, String endereco) {
+        this.nome_fantasia=nome_fantasia;
+        this.estado=estado;
+        this.cidade=cidade;
+        this.bairro=bairro;      
+        this.telefone=telefone;
+        this.endereco=endereco;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     /**
      * @return the bairro

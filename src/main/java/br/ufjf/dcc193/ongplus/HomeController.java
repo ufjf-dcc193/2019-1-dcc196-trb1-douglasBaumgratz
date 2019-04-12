@@ -30,6 +30,9 @@ public class HomeController{
         return "relatorio";
     }
 
+    /*
+        Formulários
+    */
     @RequestMapping("sede_form.html")
     public String sede_form(){
         return "sede_form";
@@ -44,4 +47,5 @@ public class HomeController{
     public String atividade_form(){
         return "atividade_form";
     }
+
 }
