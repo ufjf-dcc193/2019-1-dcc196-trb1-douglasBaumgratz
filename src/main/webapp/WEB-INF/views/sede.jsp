@@ -35,16 +35,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="relatorio.html">Relatório</a>
                 </li>
-                <!-- <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li> -->
             </ul>
         </div>
     </nav>
@@ -53,7 +43,7 @@
         
         <h1 align="center">Sedes</h1><br/>
                 
-        <a class="btn btn-primary btn-sm" href="#" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
+        <a class="btn btn-primary btn-sm" href="sede_form.html" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
         </a><br/><br/>        
 
         <table class="table">

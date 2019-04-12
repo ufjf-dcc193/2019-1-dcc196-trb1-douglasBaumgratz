@@ -39,39 +39,16 @@
         </div>
     </nav>
 
-    <div class="container"><br /><br />
+    <div class="container"><br/><br/>
+        
+        <h1 align="center">Sedes</h1><br/>
+                
+        
 
-        <h1 align="center">Membros</h1><br />
-
-        <a class="btn btn-primary btn-sm" href="#" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
-        </a><br /><br />
-
-        <table class="table">
-            <tr>
-                <th>Nome</th>
-                <th>Função</th>
-                <th>Email</th>
-                <th>Data entrada</th>
-                <th>Data saída</th>
-                <th>Ações</th>
-            </tr>
-            <tr>
-                <td>a</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a class="btn btn-info btn-sm" href="#" role="button">
-                        <i class="far fa-edit"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#" role="button">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                </td>
-            </tr>
-        </table>
     </div>
+
+
+
 </body>
 
 </html>

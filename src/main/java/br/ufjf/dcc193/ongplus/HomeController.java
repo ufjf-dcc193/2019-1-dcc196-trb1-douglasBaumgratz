@@ -29,4 +29,19 @@ public class HomeController{
     public String relatorio(){
         return "relatorio";
     }
+
+    @RequestMapping("sede_form.html")
+    public String sede_form(){
+        return "sede_form";
+    }
+
+    @RequestMapping("membro_form.html")
+    public String membro_form(){
+        return "membro_form";
+    }
+
+    @RequestMapping("atividade_form.html")
+    public String atividade_form(){
+        return "atividade_form";
+    }
 }
