@@ -44,8 +44,8 @@
         </div>
     </nav>
 
-    <div class="container">
-        Home
+    <div class="container"><br/><br/>
+        <h1 align="center">Seja bem vindo a ONG PLUS</h1>
     </div>
     
 </body>
