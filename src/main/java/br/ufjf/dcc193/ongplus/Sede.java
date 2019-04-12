@@ -1,9 +1,10 @@
 package br.ufjf.dcc193.ongplus;
 
 /**
- * sede
+ * Sede
+ * 
  */
-public class sede {
+public class Sede {
 
     private String nome_fantasia;
     private String estado;
