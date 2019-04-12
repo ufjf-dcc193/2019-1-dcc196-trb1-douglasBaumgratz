@@ -20,10 +20,10 @@
                 <a class="nav-link" href="sede.html">Sedes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="membro.html">Membros de uma Sede</a>
+                <a class="nav-link" href="membro.html">Membros</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="atividade.html">Atividades de uma Sede</a>
+                <a class="nav-link" href="atividade.html">Atividades</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="relatorio.html">Relatório</a>
@@ -42,6 +42,11 @@
         </div>
     </nav>
     
-    Sede
+    <div class="container">
+        Sede
+    </div>
+
+
+
 </body>
 </html>
