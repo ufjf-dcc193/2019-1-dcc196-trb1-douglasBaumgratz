@@ -41,6 +41,7 @@
             </ul>
         </div>
     </nav>
-    Home
+    
+    Membro
 </body>
 </html>
