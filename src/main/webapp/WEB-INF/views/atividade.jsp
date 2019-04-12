@@ -38,7 +38,7 @@
         
         <h1 align="center">Atividades</h1><br/>
                 
-        <a class="btn btn-primary btn-sm" href="#" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
+        <a class="btn btn-primary btn-sm" href="atividade_form.html" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
         </a><br/><br/>        
 
         <table class="table">

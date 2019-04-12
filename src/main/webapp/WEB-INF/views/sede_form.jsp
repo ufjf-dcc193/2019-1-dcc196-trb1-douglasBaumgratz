@@ -43,8 +43,7 @@
         
         <h1 align="center">Sedes</h1><br/>
                 
-        <form class="text-left" method="POST">
-            
+        <form class="text-left" method="POST">            
             <label>Nome:</label>
             <input type="text" name="name" class="form-control form-group">
             <label>Endereço:</label>
@@ -58,8 +57,8 @@
             <label>Telefone:</label>
             <input name="telefone" type="text" class="form-control form-group">            
             <div class="text-right">
-              <button type="submit" class="btn btn-primary btm-sm">OK</button>
-              <button type="reset" class="btn btn-danger btm-sm">Cancelar</button>
+              <button type="submit" class="btn btn-primary btm-sm">OK</button>              
+              <a class="btn btn-danger" href="sede.html">Cancelar</a>
             </div>
         </form>
 

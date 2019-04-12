@@ -39,39 +39,29 @@
         </div>
     </nav>
 
-    <div class="container"><br /><br />
+    <div class="container"><br/><br/>
+        
+        <h1 align="center">Atividades</h1><br/>
+                
+        <form class="text-left" method="POST">            
+            <label>Título:</label>
+            <input type="text" name="titulo" class="form-control form-group">
+            <label>Descrição:</label>
+            <input type="text" name="descricao" class="form-control form-group">
+            <label>Data início:</label>
+            <input name="data_inicio" type="text" class="form-control form-group">
+            <label>Data fim:</label>
+            <input name="data_fim" type="text" class="form-control form-group">            
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btm-sm">OK</button>              
+              <a class="btn btn-danger" href="atividade.html">Cancelar</a>
+            </div>
+        </form>
 
-        <h1 align="center">Membros</h1><br />
-
-        <a class="btn btn-primary btn-sm" href="membro_form.html" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
-        </a><br /><br />
-
-        <table class="table">
-            <tr>
-                <th>Nome</th>
-                <th>Função</th>
-                <th>Email</th>
-                <th>Data entrada</th>
-                <th>Data saída</th>
-                <th>Ações</th>
-            </tr>
-            <tr>
-                <td>a</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a class="btn btn-info btn-sm" href="#" role="button">
-                        <i class="far fa-edit"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#" role="button">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                </td>
-            </tr>
-        </table>
     </div>
+
+
+
 </body>
 
 </html>
