@@ -43,7 +43,25 @@
         
         <h1 align="center">Sedes</h1><br/>
                 
-        
+        <form class="text-left" method="POST">
+            
+            <label>Nome:</label>
+            <input type="text" name="name" class="form-control form-group">
+            <label>Endereço:</label>
+            <input type="text" name="endereco" class="form-control form-group">
+            <label>Cidade:</label>
+            <input name="cidade" type="text" class="form-control form-group">
+            <label>Bairro:</label>
+            <input name="bairro" type="text" class="form-control form-group">
+            <label>Estado:</label>
+            <input name="estado" type="text" class="form-control form-group">
+            <label>Telefone:</label>
+            <input name="telefone" type="text" class="form-control form-group">            
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btm-sm">OK</button>
+              <button type="reset" class="btn btn-danger btm-sm">Cancelar</button>
+            </div>
+        </form>
 
     </div>
 
