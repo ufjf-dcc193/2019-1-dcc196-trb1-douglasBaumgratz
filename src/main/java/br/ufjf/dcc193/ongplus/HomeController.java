@@ -54,7 +54,8 @@ public class HomeController {
     }
 
     @RequestMapping("atividade_form.html")
-    public String atividade_form() {
+    public String atividade_form(Model model) {
+        model.addAttribute("sede", sede.findAll());
         return "atividade_form";
     }
 

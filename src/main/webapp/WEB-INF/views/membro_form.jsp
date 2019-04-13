@@ -55,7 +55,6 @@
                     </option>
                  </c:forEach>
             </select> 
-
             <label>Nome:</label>
             <input type="text" name="name" class="form-control form-group">
             <label>Função:</label>

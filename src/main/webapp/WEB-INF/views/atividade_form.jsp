@@ -1,4 +1,6 @@
 <%@page pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +45,16 @@
         
         <h1 align="center">Atividades</h1><br/>
                 
-        <form class="text-left" method="POST">            
+        <form class="text-left" method="POST">    
+            <label>Sede:</label>
+            <select name="sede" class="form-control form-group">
+                <option value="">...</option>
+                <c:forEach var="rep" items="${sede}">
+                    <option value="${rep.getNome_fantasia()}">
+                        ${rep.getNome_fantasia()}
+                    </option>
+                    </c:forEach>
+            </select>         
             <label>Título:</label>
             <input type="text" name="titulo" class="form-control form-group">
             <label>Descrição:</label>
