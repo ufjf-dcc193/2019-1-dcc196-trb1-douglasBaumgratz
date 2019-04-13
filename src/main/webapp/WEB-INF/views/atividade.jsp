@@ -66,9 +66,6 @@
                             <a class="btn btn-info btn-sm" href="#" role="button">
                                 <i class="far fa-edit"></i>
                             </a>
-                            <a class="btn btn-danger btn-sm" href="#" role="button">
-                                <i class="far fa-trash-alt"></i>
-                            </a>
                         </td>
                     </tr>
                 </table>
