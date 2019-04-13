@@ -1,23 +1,29 @@
 package br.ufjf.dcc193.ongplus;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
+    @Autowired
+    SedeRepository rep;
 
+    /*
+     * Chamadas para páginas principais
+     */
     @RequestMapping({ "", "index.html" })
     public String home() {
         return "home";
     }
 
     @RequestMapping("sede.html")
-    public String sede(Model model) {
-        Sede sede1 = new Sede("MVX", "MG", "Juiz de Fora", "Centro", 999454391, "Rua Assis Lima");
-        model.addAttribute("sede1", sede1);        
+    public String sede(Model model) {      
+        model.addAttribute("rep", rep.findAll());                
         return "sede";
     }
+
 
     @RequestMapping("membro.html")
     public String membro(Model model) {
@@ -35,16 +41,10 @@ public class HomeController {
     }
 
     /*
-     * Formulários
+     * Chamadas para formulários
      */
     @RequestMapping("sede_form.html")
     public String sede_form() {
-        // ConfigurableApplicationContext ctx =
-        // SpringApplication.run(MainApplication.class, args);
-        // SedeRepository rep = ctx.getBean(SedeRepository.class);
-        // rep.save(new Sede("a","b","c","d",1,"3"));
-        // rep.save(new Sede("a","b","c","d",1,"3"));
-        // System.out.println("foi"+rep.findAll().toString());
         return "sede_form";
     }
 
@@ -58,17 +58,14 @@ public class HomeController {
         return "atividade_form";
     }
 
+    /*
+     * Chamadas para cadastros
+     */
     @RequestMapping("cadastrar_sede.html")
-    public String cadastrar_sede() {
-
-        // ConfigurableApplicationContext ctx;
-        // SedeRepository rep = ctx.getBean(SedeRepository.class);
-        // rep.save(new Sede("a","b","c","d",1,"3"));
-        // rep.save(new Sede("a","b","c","d",1,"3"));
-        // System.out.println("TAMANHO é: "+rep.findAll().size());
-        // System.out.println("cadastrar_site");
+    public String cadastrar_sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone,
+            String endereco) {
+        rep.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));        
         return "sede_form";
-
     }
 
 }

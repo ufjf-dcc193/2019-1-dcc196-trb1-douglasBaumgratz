@@ -1,4 +1,6 @@
 <%@page pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +44,7 @@
     <div class="container"><br/><br/>
         
         <h1 align="center">Sedes</h1><br/>
-        <!-- <h1 align="center">${variavel}</h1><br/> -->
+        <!-- <h1 align="center">${rep[0].nome_fantasia}</h1><br/> -->
                 
         <a class="btn btn-primary btn-sm" href="sede_form.html" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
         </a><br/><br/>        
@@ -57,22 +59,26 @@
                 <th>Telefone</th>
                 <th>Ações</th>
             </tr>
-            <tr>
-                <td>${sede1.getNome_fantasia()}</td>
-                <td>${sede1.getEndereco()}</td>
-                <td>${sede1.getCidade()}</td>
-                <td>${sede1.getBairro()}</td>
-                <td>${sede1.getEstado()}</td>
-                <td>${sede1.getTelefone()}</td>
-                <td>
-                    <a class="btn btn-info btn-sm" href="#" role="button">
-                        <i class="far fa-edit"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#" role="button">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                </td>
-            </tr>
+
+            <c:forEach items="${rep}" var="rep">
+                <tr>                
+                    <td>${rep.nome_fantasia}</td>
+                    <td>${rep.endereco}</td>
+                    <td>${rep.cidade}</td>
+                    <td>${rep.bairro}</td>
+                    <td>${rep.estado}</td>
+                    <td>${rep.telefone}</td>
+                    <td>
+                        <a class="btn btn-info btn-sm" href="#" role="button">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger btn-sm" href="#" role="button">
+                            <i class="far fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+
         </table>
     </div>
 
