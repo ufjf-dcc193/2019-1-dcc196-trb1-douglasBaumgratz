@@ -15,7 +15,7 @@ public class MainApplication {
 		SedeRepository rep = ctx.getBean(SedeRepository.class);		
 		rep.save(new Sede("a","b","c","d",1,"3"));
 		rep.save(new Sede("a","b","c","d",1,"3"));	
-		System.out.println("foi"+rep.findAll().toString());
+		// System.out.println("foi"+rep.findAll().toString());
 	}
 	// public ConfigurableApplicationContext ssdad(String[] args){
 	// 	ConfigurableApplicationContext ctx = SpringApplication.run(MainApplication.class, args);

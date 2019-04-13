@@ -62,12 +62,12 @@
 
             <c:forEach items="${sede}" var="rep">
                 <tr>                
-                    <td>${rep.nome_fantasia}</td>
-                    <td>${rep.endereco}</td>
-                    <td>${rep.cidade}</td>
-                    <td>${rep.bairro}</td>
-                    <td>${rep.estado}</td>
-                    <td>${rep.telefone}</td>
+                    <td>${rep.getNome_fantasia()}</td>
+                    <td>${rep.getEndereco()}</td>
+                    <td>${rep.getCidade()}</td>
+                    <td>${rep.getBairro()}</td>
+                    <td>${rep.getEstado()}</td>
+                    <td>${rep.getTelefone()}</td>
                     <td>
                         <a class="btn btn-info btn-sm" href="#" role="button">
                             <i class="far fa-edit"></i>

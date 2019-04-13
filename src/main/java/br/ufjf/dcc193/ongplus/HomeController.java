@@ -19,11 +19,10 @@ public class HomeController {
     }
 
     @RequestMapping("sede.html")
-    public String sede(Model model) {      
-        model.addAttribute("sede", sede.findAll());                
+    public String sede(Model model) {
+        model.addAttribute("sede", sede.findAll());
         return "sede";
     }
-
 
     @RequestMapping("membro.html")
     public String membro(Model model) {
@@ -64,7 +63,16 @@ public class HomeController {
     @RequestMapping("cadastrar_sede.html")
     public String cadastrar_sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone,
             String endereco) {
-        sede.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));        
+        sede.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));
+        return "sede_form";
+    }
+
+    /*
+     * Chamadas para excluir
+     */
+    @RequestMapping("excluir_sede.html")
+    public String excluir_sede(Long id) {
+        sede.deleteById(id);
         return "sede_form";
     }
 
