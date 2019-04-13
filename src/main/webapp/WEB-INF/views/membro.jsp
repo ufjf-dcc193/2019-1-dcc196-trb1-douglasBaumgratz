@@ -40,37 +40,45 @@
     </nav>
 
     <div class="container"><br /><br />
+        <div class="card text-center">
+            <div class="card-header">
+                <h1 align="center">Membros</h1>
+            </div>
+            <div class="card-body text-left">
+                <a class="btn btn-primary btn-sm" href="membro_form.html" role="button"><i class="fa fa-plus"
+                        aria-hidden="true"></i>
+                </a><br /><br />
 
-        <h1 align="center">Membros</h1><br />
-
-        <a class="btn btn-primary btn-sm" href="membro_form.html" role="button"><i class="fa fa-plus" aria-hidden="true"></i>
-        </a><br /><br />
-
-        <table class="table">
-            <tr>
-                <th>Nome</th>
-                <th>Função</th>
-                <th>Email</th>
-                <th>Data entrada</th>
-                <th>Data saída</th>
-                <th>Ações</th>
-            </tr>
-            <tr>
-                <td>a</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a class="btn btn-info btn-sm" href="#" role="button">
-                        <i class="far fa-edit"></i>
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#" role="button">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                </td>
-            </tr>
-        </table>
+                <table class="table">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Função</th>
+                        <th>Email</th>
+                        <th>Data entrada</th>
+                        <th>Data saída</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr>
+                        <td>a</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a class="btn btn-info btn-sm" href="#" role="button">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="#" role="button">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer text-muted text-right">
+                Membros
+            </div>
+        </div>
     </div>
 </body>
 

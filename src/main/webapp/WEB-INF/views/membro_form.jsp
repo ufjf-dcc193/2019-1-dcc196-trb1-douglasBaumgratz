@@ -43,35 +43,41 @@
     </nav>
 
     <div class="container"><br /><br />
-
-        <h1 align="center">Membros</h1><br />
-
-        <form class="text-left" method="POST">
-            <label>Sede:</label>
-            <select name="sede" class="form-control form-group">
-                <option value="">...</option>
-                <c:forEach var="rep" items="${sede}">
-                    <option value="${rep.getNome_fantasia()}">
-                        ${rep.getNome_fantasia()}
-                    </option>
-                </c:forEach>
-            </select>
-            <label>Nome:</label>
-            <input type="text" name="name" class="form-control form-group">
-            <label>Função:</label>
-            <input type="text" name="funcao" class="form-control form-group">
-            <label>Email:</label>
-            <input type="email" name="email" type="text" class="form-control form-group">
-            <label>Data entrada:</label>
-            <input name="data_entrada" type="text" class="form-control form-group datepicker">
-            <label>Data saída:</label>
-            <input name="data_saida" type="text" class="form-control form-group datepicker">
-            <div class="text-right"><br />
-                <button type="submit" class="btn btn-primary btm-sm">OK</button>
-                <a class="btn btn-danger" href="membro.html">Cancelar</a>
+        <div class="card text-center">
+            <div class="card-header">
+                <h1 align="center">Membros</h1>
             </div>
-        </form>
-
+            <div class="card-body text-left">
+                <form class="text-left" method="POST">
+                    <label>Sede:</label>
+                    <select name="sede" class="form-control form-group">
+                        <option value="">...</option>
+                        <c:forEach var="rep" items="${sede}">
+                            <option value="${rep.getNome_fantasia()}">
+                                ${rep.getNome_fantasia()}
+                            </option>
+                        </c:forEach>
+                    </select>
+                    <label>Nome:</label>
+                    <input type="text" name="name" class="form-control form-group">
+                    <label>Função:</label>
+                    <input type="text" name="funcao" class="form-control form-group">
+                    <label>Email:</label>
+                    <input type="email" name="email" type="text" class="form-control form-group">
+                    <label>Data entrada:</label>
+                    <input name="data_entrada" type="text" class="form-control form-group datepicker">
+                    <label>Data saída:</label>
+                    <input name="data_saida" type="text" class="form-control form-group datepicker">
+                    <div class="text-right"><br />
+                        <button type="submit" class="btn btn-primary btm-sm">OK</button>
+                        <a class="btn btn-danger" href="membro.html">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-muted text-right">
+                Membros
+            </div>
+        </div>
     </div>
 
 
