@@ -60,7 +60,7 @@
                 <th>Ações</th>
             </tr>
 
-            <c:forEach items="${rep}" var="rep">
+            <c:forEach items="${sede}" var="rep">
                 <tr>                
                     <td>${rep.nome_fantasia}</td>
                     <td>${rep.endereco}</td>

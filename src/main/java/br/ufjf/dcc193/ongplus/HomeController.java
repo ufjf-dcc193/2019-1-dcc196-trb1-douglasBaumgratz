@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
     @Autowired
-    SedeRepository rep;
+    SedeRepository sede;
 
     /*
      * Chamadas para páginas principais
@@ -20,7 +20,7 @@ public class HomeController {
 
     @RequestMapping("sede.html")
     public String sede(Model model) {      
-        model.addAttribute("rep", rep.findAll());                
+        model.addAttribute("sede", sede.findAll());                
         return "sede";
     }
 
@@ -64,7 +64,7 @@ public class HomeController {
     @RequestMapping("cadastrar_sede.html")
     public String cadastrar_sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone,
             String endereco) {
-        rep.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));        
+        sede.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));        
         return "sede_form";
     }
 

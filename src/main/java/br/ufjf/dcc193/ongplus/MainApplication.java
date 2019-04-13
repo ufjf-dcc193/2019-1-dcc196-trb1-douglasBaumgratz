@@ -14,7 +14,7 @@ public class MainApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(MainApplication.class, args);
 		SedeRepository rep = ctx.getBean(SedeRepository.class);		
 		rep.save(new Sede("a","b","c","d",1,"3"));
-		rep.save(new Sede("a","b","c","d",1,"3"));		
+		rep.save(new Sede("a","b","c","d",1,"3"));	
 		System.out.println("foi"+rep.findAll().toString());
 	}
 	// public ConfigurableApplicationContext ssdad(String[] args){

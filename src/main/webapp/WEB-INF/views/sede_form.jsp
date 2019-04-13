@@ -45,7 +45,7 @@
 
         <form class="text-left" action="cadastrar_sede.html" method="POST">
             <label>Nome:</label>
-            <input type="text" name="name" class="form-control form-group">
+            <input type="text" name="nome" class="form-control form-group">
             <label>Endereço:</label>
             <input type="text" name="endereco" class="form-control form-group">
             <label>Cidade:</label>
