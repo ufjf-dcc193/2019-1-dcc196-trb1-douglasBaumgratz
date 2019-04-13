@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 /**
  * Sede
- * 
  */
 @Entity
 public class Sede {

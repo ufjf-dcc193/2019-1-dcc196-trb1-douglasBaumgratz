@@ -6,11 +6,26 @@ import java.util.Date;
  * Membro
  */
 public class Membro {
+    private Sede sede;
     private String nome;
     private String funcao;
     private String email;
     private Date data_entrada;
     private Date data_saida;
+
+    /**
+     * @return the sede
+     */
+    public Sede getSede() {
+        return sede;
+    }
+
+    /**
+     * @param sede the sede to set
+     */
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
 
     /**
      * @return the data_entrada

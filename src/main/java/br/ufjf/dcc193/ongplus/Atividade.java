@@ -4,12 +4,26 @@ package br.ufjf.dcc193.ongplus;
  * Atividade
  */
 public class Atividade {
-
+    private Sede sede;
     private String titulo;
     private String descricao;
     private String data_inicio;
     private String data_fim;
     private Float total_horas;
+
+    /**
+     * @return the sede
+     */
+    public Sede getSede() {
+        return sede;
+    }
+
+    /**
+     * @param sede the sede to set
+     */
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
 
     /**
      * @return the data_fim
