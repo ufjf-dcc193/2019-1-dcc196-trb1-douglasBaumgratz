@@ -1,4 +1,6 @@
-package br.ufjf.dcc193.ongplus;
+package br.ufjf.dcc193.ongplus.atividade;
+
+import br.ufjf.dcc193.ongplus.sede.Sede;
 
 /**
  * Atividade

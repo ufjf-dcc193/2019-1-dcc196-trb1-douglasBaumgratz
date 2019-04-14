@@ -1,4 +1,4 @@
-package br.ufjf.dcc193.ongplus;
+package br.ufjf.dcc193.ongplus.sede;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

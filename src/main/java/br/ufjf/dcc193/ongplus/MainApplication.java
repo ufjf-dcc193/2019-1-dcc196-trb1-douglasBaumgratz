@@ -1,4 +1,6 @@
 package br.ufjf.dcc193.ongplus;
+import br.ufjf.dcc193.ongplus.sede.SedeRepository;
+import br.ufjf.dcc193.ongplus.sede.Sede;
 
 
 import org.springframework.boot.SpringApplication;
