@@ -1,12 +1,12 @@
-package br.ufjf.dcc193.ongplus;
-
-import br.ufjf.dcc193.ongplus.sede.Sede;
-import br.ufjf.dcc193.ongplus.sede.SedeRepository;
+package br.ufjf.dcc193.ongplus.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
+import br.ufjf.dcc193.ongplus.Models.Sede;
 
 @Controller
 public class HomeController {

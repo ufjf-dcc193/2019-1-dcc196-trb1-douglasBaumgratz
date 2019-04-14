@@ -1,5 +1,4 @@
-package br.ufjf.dcc193.ongplus.membro;
-import br.ufjf.dcc193.ongplus.sede.Sede;
+package br.ufjf.dcc193.ongplus.Models;
 
 import java.util.Date;
 
