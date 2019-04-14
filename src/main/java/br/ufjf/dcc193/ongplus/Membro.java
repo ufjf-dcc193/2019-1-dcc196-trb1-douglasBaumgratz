@@ -2,16 +2,52 @@ package br.ufjf.dcc193.ongplus;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Membro
  */
+@Entity
 public class Membro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
     private Sede sede;
     private String nome;
     private String funcao;
     private String email;
     private Date data_entrada;
     private Date data_saida;
+
+    public Membro() {
+
+    }
+
+    public Membro(Sede sede, String nome, String funcao, String email, Date data_entrada, Date data_saida) {
+        this.sede = sede;
+        this.nome = nome;
+        this.funcao = funcao;
+        this.email = email;
+        this.data_entrada = data_entrada;
+        this.data_saida = data_saida;
+    }
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     /**
      * @return the sede
