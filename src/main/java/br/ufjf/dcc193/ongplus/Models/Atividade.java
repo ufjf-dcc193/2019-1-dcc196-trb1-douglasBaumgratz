@@ -1,15 +1,38 @@
 package br.ufjf.dcc193.ongplus.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Atividade
  */
+@Entity
 public class Atividade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Sede sede;
+    private Long id;
     private String titulo;
     private String descricao;
     private String data_inicio;
     private String data_fim;
     private Float total_horas;
+
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     /**
      * @return the sede

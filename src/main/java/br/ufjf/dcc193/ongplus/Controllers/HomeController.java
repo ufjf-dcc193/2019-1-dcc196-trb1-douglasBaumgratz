@@ -6,13 +6,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
+import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
+import br.ufjf.dcc193.ongplus.Persistence.AtividadeRepository;
 import br.ufjf.dcc193.ongplus.Models.Sede;
+import br.ufjf.dcc193.ongplus.Models.Membro;
+import br.ufjf.dcc193.ongplus.Models.Atividade;
 
 @Controller
 public class HomeController {
     @Autowired
     SedeRepository sede;
-
+    @Autowired
+    MembroRepository membro;
+    @Autowired
+    AtividadeRepository atividade;
+    
     /*
      * Chamadas para páginas principais
      */
@@ -29,11 +37,13 @@ public class HomeController {
 
     @RequestMapping("membro.html")
     public String membro(Model model) {
+        model.addAttribute("membro", membro.findAll());
         return "membro/membro";
     }
 
     @RequestMapping("atividade.html")
     public String atividade(Model model) {
+        model.addAttribute("atividade", atividade.findAll());
         return "atividade/atividade";
     }
 
@@ -52,7 +62,7 @@ public class HomeController {
 
     @RequestMapping("membro_form.html")
     public String membro_form(Model model) {
-        model.addAttribute("sede", sede.findAll());
+        model.addAttribute("membro", membro.findAll());
         return "membro/membro_form";
     }
 

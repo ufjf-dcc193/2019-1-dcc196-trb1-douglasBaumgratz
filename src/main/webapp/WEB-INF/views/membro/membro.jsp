@@ -25,13 +25,28 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <td></td>                    
                 <td>
                     <a class="btn btn-info btn-sm" href="#" role="button">
                         <i class="far fa-edit"></i>
                     </a>
                 </td>
             </tr>
+            <c:forEach items="${membro}" var="rep">
+                <tr>
+                    <td>${rep.getNome()}</td>
+                    <td>${rep.getFuncao()}</td>
+                    <td>${rep.getEmail()}</td>
+                    <td>${rep.getData_entrada()}</td>
+                    <td>${rep.getData_saida()}</td>                    
+                    <td>
+                        <a class="btn btn-info btn-sm" href="#" role="button">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+            
         </table>
     </div>
     <div class="card-footer text-muted text-right">
