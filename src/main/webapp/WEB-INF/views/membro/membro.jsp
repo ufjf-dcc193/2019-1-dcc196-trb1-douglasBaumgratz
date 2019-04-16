@@ -13,6 +13,7 @@
 
         <table class="table">
             <tr>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Função</th>
                 <th>Email</th>
@@ -25,6 +26,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
+                <td></td>
                 <td></td>                    
                 <td>
                     <a class="btn btn-info btn-sm" href="#" role="button">
@@ -34,6 +36,7 @@
             </tr>
             <c:forEach items="${membro}" var="rep">
                 <tr>
+                    <td>${rep.getId()}</td>
                     <td>${rep.getNome()}</td>
                     <td>${rep.getFuncao()}</td>
                     <td>${rep.getEmail()}</td>
