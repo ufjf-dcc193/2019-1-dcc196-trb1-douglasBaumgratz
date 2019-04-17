@@ -20,6 +20,20 @@ public class Atividade {
     private String data_fim;
     private Float total_horas;
 
+    public Atividade() {
+
+    }
+
+    public Atividade(Sede sede, String titulo, String descricao, String data_inicio, String data_fim,
+            Float total_horas) {
+        this.sede = sede;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.data_inicio = data_inicio;
+        this.data_fim = data_fim;
+        this.total_horas = total_horas;
+    }
+
     /**
      * @return the id
      */

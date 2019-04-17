@@ -36,6 +36,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="relatorio.html">Relatório</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="sobre.html">Sobre</a>
+                </li>
             </ul>
         </div>
     </nav>

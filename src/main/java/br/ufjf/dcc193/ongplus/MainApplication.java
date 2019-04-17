@@ -1,11 +1,7 @@
 package br.ufjf.dcc193.ongplus;
 
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
-import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
-import br.ufjf.dcc193.ongplus.Models.Membro;
 import br.ufjf.dcc193.ongplus.Models.Sede;
-
-import java.util.Date;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

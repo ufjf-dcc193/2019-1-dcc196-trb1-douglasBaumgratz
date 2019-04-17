@@ -1,9 +1,14 @@
 package br.ufjf.dcc193.ongplus.Controllers;
 
+// import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+// import org.springframework.web.bind.annotation.RequestMethod;
+// import org.springframework.web.bind.annotation.RequestParam;
+// import org.springframework.web.servlet.ModelAndView;
 
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
@@ -20,19 +25,18 @@ public class HomeController {
     MembroRepository membro;
     @Autowired
     AtividadeRepository atividade;
-    
+
     /*
-     * Chamadas para páginas principais
+     * Páginas principais
      */
     @RequestMapping({ "", "index.html" })
     public String home() {
         return "home";
     }
 
-    @RequestMapping("sede.html")
-    public String sede(Model model) {
-        model.addAttribute("sede", sede.findAll());
-        return "sede/sede";
+    @RequestMapping("sobre.html")
+    public String sobre() {
+        return "sobre";
     }
 
     @RequestMapping("membro.html")
@@ -51,14 +55,9 @@ public class HomeController {
     public String relatorio() {
         return "relatorio/relatorio";
     }
-
     /*
-     * Chamadas para formulários
+     * Formulários
      */
-    @RequestMapping("sede_form.html")
-    public String sede_form() {
-        return "sede/sede_form";
-    }
 
     @RequestMapping("membro_form.html")
     public String membro_form(Model model) {
@@ -73,22 +72,39 @@ public class HomeController {
     }
 
     /*
-     * Chamadas para cadastros
+     * CREATE
      */
-    @RequestMapping("cadastrar_sede.html")
-    public String cadastrar_sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone,
-            String endereco) {
-        sede.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));
-        return "sede/sede_form";
+
+    @RequestMapping("cadastrar_membro.html")
+    public String cadastrar_membro(Sede sede, String nome, String funcao, String email, String data_entrada,
+            String data_saida) {
+        membro.save(new Membro(sede, nome, funcao, email, data_entrada, data_saida));
+        return "membro/membro_form";
+    }
+
+    @RequestMapping("cadastrar_atividade.html")
+    public String cadastrar_atividade(Sede sede, String titulo, String descricao, String data_inicio, String data_fim,
+            Float total_horas) {
+        atividade.save(new Atividade(sede, titulo, descricao, data_inicio, data_fim, total_horas));
+        return "atividade/atividade_form";
     }
 
     /*
-     * Chamadas para excluir
+     * UPDATE
      */
-    @RequestMapping("excluir_sede.html")
-    public String excluir_sede(Long id) {
-        sede.deleteById(id);
-        return "sede/sede_form";
+
+    @RequestMapping("editar_membro.html")
+    public String editar_membro(Long id) {
+        return "membro/membro_form";
     }
+
+    @RequestMapping("editar_atividade.html")
+    public String editar_atividade(Long id) {
+        return "atividade/atividade_form";
+    }
+
+    /*
+     * DELETE
+     */
 
 }

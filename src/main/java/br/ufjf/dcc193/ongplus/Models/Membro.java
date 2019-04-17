@@ -19,14 +19,14 @@ public class Membro {
     private String nome;
     private String funcao;
     private String email;
-    private Date data_entrada;
-    private Date data_saida;
+    private String data_entrada;
+    private String data_saida;
 
     public Membro() {
 
     }
 
-    public Membro(Sede sede, String nome, String funcao, String email, Date data_entrada, Date data_saida) {
+    public Membro(Sede sede, String nome, String funcao, String email, String data_entrada, String data_saida) {
         this.sede = sede;
         this.nome = nome;
         this.funcao = funcao;
@@ -34,7 +34,7 @@ public class Membro {
         this.data_entrada = data_entrada;
         this.data_saida = data_saida;
     }
-    
+
     /**
      * @return the id
      */
@@ -66,14 +66,14 @@ public class Membro {
     /**
      * @return the data_entrada
      */
-    public Date getData_entrada() {
+    public String getData_entrada() {
         return data_entrada;
     }
 
     /**
      * @return the data_saida
      */
-    public Date getData_saida() {
+    public String getData_saida() {
         return data_saida;
     }
 
@@ -101,14 +101,14 @@ public class Membro {
     /**
      * @param data_entrada the data_entrada to set
      */
-    public void setData_entrada(Date data_entrada) {
+    public void setData_entrada(String data_entrada) {
         this.data_entrada = data_entrada;
     }
 
     /**
      * @param data_saida the data_saida to set
      */
-    public void setData_saida(Date data_saida) {
+    public void setData_saida(String data_saida) {
         this.data_saida = data_saida;
     }
 
