@@ -13,7 +13,7 @@
 
         <table class="table">
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Título</th>
                 <th>Descrição</th>
                 <th>Data início</th>
@@ -22,7 +22,7 @@
             </tr>
             <tr>
                 <td>a</td>
-                <td></td>
+                <!-- <td></td> -->
                 <td></td>
                 <td></td>
                 <td></td>

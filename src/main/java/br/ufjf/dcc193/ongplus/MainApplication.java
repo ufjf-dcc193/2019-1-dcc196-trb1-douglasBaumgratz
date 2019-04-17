@@ -1,13 +1,15 @@
 package br.ufjf.dcc193.ongplus;
 
-import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
-import br.ufjf.dcc193.ongplus.Models.Sede;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import br.ufjf.dcc193.ongplus.Models.Sede;
+import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
+
 @SpringBootApplication
+// @EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+
 public class MainApplication {
 
 	public static void main(String[] args) {
@@ -16,9 +18,9 @@ public class MainApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(MainApplication.class, args);
 		SedeRepository repSede = ctx.getBean(SedeRepository.class);
 		
-		Sede sede1 = new Sede("MVX", "b", "c", "d", 1, "3");
+		Sede sede1 = new Sede("MVX", "bbb", "ccc", "ddd", 1, "xx");
 		repSede.save(sede1);
-		repSede.save(new Sede("HMTJ", "b", "c", "d", 1, "3"));
+		repSede.save(new Sede("HMTJ", "bbb", "ccc", "ddd", 2, "yy"));
 
 		
 		// MembroRepository repMembro = ctx.getBean(MembroRepository.class);

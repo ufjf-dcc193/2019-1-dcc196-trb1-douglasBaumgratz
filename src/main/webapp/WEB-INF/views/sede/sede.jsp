@@ -13,9 +13,9 @@
 
         <table class="table">
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Nome Fantasia</th>
-                <th>Endereco</th>
+                <th>Endereço</th>
                 <th>Cidade</th>
                 <th>Bairro</th>
                 <th>Estado</th>
@@ -25,7 +25,7 @@
 
             <c:forEach items="${sede}" var="rep">
                 <tr>
-                    <td>${rep.getId()}</td>
+                    <!-- <td>${rep.getId()}</td> -->
                     <td>${rep.getNome_fantasia()}</td>
                     <td>${rep.getEndereco()}</td>
                     <td>${rep.getCidade()}</td>

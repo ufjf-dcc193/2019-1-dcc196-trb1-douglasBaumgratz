@@ -13,17 +13,17 @@
 
         <table class="table">
             <tr>
-                <th>ID</th>
+                <!-- <th>ID</th> -->
                 <th>Nome</th>
                 <th>Função</th>
-                <th>Email</th>
+                <th>E-mail</th>
                 <th>Data entrada</th>
                 <th>Data saída</th>
                 <th>Ações</th>
             </tr>
             <tr>
                 <td>a</td>
-                <td></td>
+                <!-- <td></td> -->
                 <td></td>
                 <td></td>
                 <td></td>
@@ -36,7 +36,7 @@
             </tr>
             <c:forEach items="${membro}" var="rep">
                 <tr>
-                    <td>${rep.getId()}</td>
+                    <!-- <td>${rep.getId()}</td> -->
                     <td>${rep.getNome()}</td>
                     <td>${rep.getFuncao()}</td>
                     <td>${rep.getEmail()}</td>
