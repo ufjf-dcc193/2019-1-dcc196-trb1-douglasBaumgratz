@@ -33,11 +33,12 @@ public class HomeController {
     public String home() {
         return "home";
     }
-
+    
     @RequestMapping("sobre.html")
     public String sobre() {
         return "sobre";
     }
+
 
     @RequestMapping("membro.html")
     public String membro(Model model) {
