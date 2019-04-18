@@ -26,16 +26,28 @@ public class MainApplication {
 		SedeRepository repSede = ctx.getBean(SedeRepository.class);
 		MembroRepository repMembro = ctx.getBean(MembroRepository.class);
 		AtividadeRepository repAtividade = ctx.getBean(AtividadeRepository.class);
-		
-		Sede s1 = new Sede("MVX", "bbb", "ccc", "ddd", 1, "xx");
+
+		Sede s1 = new Sede("MVX", "Nair Furtado de Souza", "Juiz de Fora", "Centro", 32811716, "www.mvx.com.br");
+		Sede s2 = new Sede("YTV", "Rosa Gomes", "Muriaé", "Jardim Alto", 32811656, "www.ytv.com.br");
 		repSede.save(s1);
+		repSede.save(s2);
 
-		Membro m1 = new Membro(s1, "João", "Ajudante", "joao@gmail.com", "01/06/2016", "01/06/2017");
+		Membro m1 = new Membro(s1, "Zicrano", "Ajudante", "joao@gmail.com", "01/06/2016", "01/06/2017");
+		Membro m2 = new Membro(s1, "Beltrano", "Manutenção", "joao@gmail.com", "01/06/2016", "01/06/2017");
+		Membro m3 = new Membro(s2, "Ciclano", "Almoxarifado", "joao@gmail.com", "01/06/2016", "01/06/2017");
 		repMembro.save(m1);
+		repMembro.save(m2);
+		repMembro.save(m3);
 
-		Atividade a1 = new Atividade(s1, "Programação", "Grupos para desenvolvimento", "01/06/2016", "01/06/2017",
-				3.00);
+		Atividade a1 = new Atividade(s1, "Programação OO", "Grupos para desenvolvimento", "01/06/2016", "01/06/2017", 10,
+				20, 30, 40);
+		Atividade a2 = new Atividade(s1, "Java", "Estudos sobre JAVA", "01/06/2016", "01/06/2017", 10,
+				20, 30, 40);
+		Atividade a3 = new Atividade(s2, "Spring", "Spring MVC", "01/06/2016", "01/06/2017", 10,
+				20, 30, 40);
 		repAtividade.save(a1);
+		repAtividade.save(a2);
+		repAtividade.save(a3);
 
 		// MembroRepository repMembro = ctx.getBean(MembroRepository.class);
 		// Date date = new Date();

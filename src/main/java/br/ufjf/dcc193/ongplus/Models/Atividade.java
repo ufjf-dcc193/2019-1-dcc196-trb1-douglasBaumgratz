@@ -25,87 +25,93 @@ public class Atividade implements Serializable {
     private String descricao;
     private String data_inicio;
     private String data_fim;
-    private double total_horas;
-    private int totalHorasAssistencial;
-    private int totalHorasJuridica;
-    private int totalHorasExecutiva;
-    private int totalHorasFinanceira;
+    private int horasAssistencial;
+    private int horasJuridica;
+    private int horasExecutiva;
+    private int horasFinanceira;
 
     public Atividade() {
     }
 
-    public Atividade(String titulo, String descricao, String data_inicio, String data_fim, double total_horas) {
+    public Atividade(String titulo, String descricao, String data_inicio, String data_fim, int horasAssistencial,
+            int horasJuridica, int horasExecutiva, int horasFinanceira) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.data_inicio = data_inicio;
         this.data_fim = data_fim;
-        this.total_horas = total_horas;
+        this.horasAssistencial = horasAssistencial;
+        this.horasJuridica = horasJuridica;
+        this.horasExecutiva = horasExecutiva;
+        this.horasFinanceira = horasFinanceira;
     }
 
     public Atividade(Sede sede, String titulo, String descricao, String data_inicio, String data_fim,
-            double total_horas) {
+            int horasAssistencial, int horasJuridica, int horasExecutiva, int horasFinanceira) {
         this.sede = sede;
         this.titulo = titulo;
         this.descricao = descricao;
         this.data_inicio = data_inicio;
         this.data_fim = data_fim;
-        this.total_horas = total_horas;
+        this.horasAssistencial = horasAssistencial;
+        this.horasJuridica = horasJuridica;
+        this.horasExecutiva = horasExecutiva;
+        this.horasFinanceira = horasFinanceira;
     }
 
     /**
-     * @return the totalHorasAssistencial
+     * @return the horasAssistencial
      */
-    public int getTotalHorasAssistencial() {
-        return totalHorasAssistencial;
+    public int getHorasAssistencial() {
+        return horasAssistencial;
     }
 
     /**
-     * @return the totalHorasExecutiva
+     * @return the horasExecutiva
      */
-    public int getTotalHorasExecutiva() {
-        return totalHorasExecutiva;
+    public int getHorasExecutiva() {
+        return horasExecutiva;
     }
 
     /**
-     * @return the totalHorasFinanceira
+     * @return the horasFinanceira
      */
-    public int getTotalHorasFinanceira() {
-        return totalHorasFinanceira;
+    public int getHorasFinanceira() {
+        return horasFinanceira;
     }
 
     /**
-     * @return the totalHorasJuridica
+     * @return the horasJuridica
      */
-    public int getTotalHorasJuridica() {
-        return totalHorasJuridica;
+    public int getHorasJuridica() {
+        return horasJuridica;
     }
 
     /**
-     * @param totalHorasAssistencial the totalHorasAssistencial to set
+     * @param horasAssistencial the horasAssistencial to set
      */
-    public void setTotalHorasAssistencial(int totalHorasAssistencial) {
-        this.totalHorasAssistencial = totalHorasAssistencial;
+    public void setHorasAssistencial(int horasAssistencial) {
+        this.horasAssistencial = horasAssistencial;
     }
 
     /**
-     * @param totalHorasExecutiva the totalHorasExecutiva to set
+     * @param horasExecutiva the horasExecutiva to set
      */
-    public void setTotalHorasExecutiva(int totalHorasExecutiva) {
-        this.totalHorasExecutiva = totalHorasExecutiva;
+    public void setHorasExecutiva(int horasExecutiva) {
+        this.horasExecutiva = horasExecutiva;
     }
 
     /**
-     * @param totalHorasFinanceira the totalHorasFinanceira to set
+     * @param horasFinanceira the horasFinanceira to set
      */
-    public void setTotalHorasFinanceira(int totalHorasFinanceira) {
-        this.totalHorasFinanceira = totalHorasFinanceira;
+    public void setHorasFinanceira(int horasFinanceira) {
+        this.horasFinanceira = horasFinanceira;
     }
 
     /**
-     * @param totalHorasJuridica the totalHorasJuridica to set
+     * @param horasJuridica the horasJuridica to set
      */
-    public void setTotalHorasJuridica(int totalHorasJuridica) {
-        this.totalHorasJuridica = totalHorasJuridica;
+    public void setHorasJuridica(int horasJuridica) {
+        this.horasJuridica = horasJuridica;
     }
 
     /**
@@ -164,12 +170,7 @@ public class Atividade implements Serializable {
         return titulo;
     }
 
-    /**
-     * @return the total_horas
-     */
-    public double getTotal_horas() {
-        return total_horas;
-    }
+
 
     /**
      * @param data_fim the data_fim to set
@@ -199,10 +200,5 @@ public class Atividade implements Serializable {
         this.titulo = titulo;
     }
 
-    /**
-     * @param total_horas the total_horas to set
-     */
-    public void setTotal_horas(double total_horas) {
-        this.total_horas = total_horas;
-    }
+
 }

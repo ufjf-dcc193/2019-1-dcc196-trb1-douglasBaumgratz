@@ -18,6 +18,10 @@
                 <th>Descrição</th>
                 <th>Data início</th>
                 <th>Data fim</th>
+                <th>Assistencial</th>
+                <th>Jurídica</th>
+                <th>Executiva</th>
+                <th>Financeira</th>
                 <th>Ações</th>
             </tr>
             <c:forEach items="${atividade}" var="rep">
@@ -27,6 +31,10 @@
                     <td>${rep.getDescricao()}</td>
                     <td>${rep.getData_inicio()}</td>
                     <td>${rep.getData_fim()}</td>                                     
+                    <td>${rep.getHorasAssistencial()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHorasJuridica()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHorasExecutiva()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHorasFinanceira()} <i class="far fa-clock"></i></td>                                     
                     <td>
                         <a class="btn btn-info btn-sm" href="#" role="button">
                             <i class="far fa-edit"></i>
