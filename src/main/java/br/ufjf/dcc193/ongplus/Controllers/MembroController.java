@@ -15,17 +15,17 @@ import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
 @Controller
 public class MembroController {
     @Autowired
-    MembroRepository membro;
+    MembroRepository membros;
     
     @RequestMapping("membro.html")
     public String membro(Model model) {
-        model.addAttribute("membro", membro.findAll());
+        model.addAttribute("membro", membros.findAll());
         return "membro/membro";
     }
 
     @RequestMapping("membro_form.html")
     public String membro_form(Model model) {
-        model.addAttribute("membro", membro.findAll());
+        model.addAttribute("membro", membros.findAll());
         return "membro/membro_form";
     }
 
@@ -34,9 +34,8 @@ public class MembroController {
      * CREATE
      */
     @RequestMapping("cadastrar_membro.html")
-    public String cadastrar_membro(Sede sede, String nome, String funcao, String email, String data_entrada,
-            String data_saida) {
-        membro.save(new Membro(sede, nome, funcao, email, data_entrada, data_saida));
+    public String cadastrar_membro(Membro membro) {
+        membros.save(membro);
         return "membro/membro_form";
     }
 

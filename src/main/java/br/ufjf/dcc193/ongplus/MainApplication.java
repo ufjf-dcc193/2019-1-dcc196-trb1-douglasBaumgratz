@@ -13,14 +13,14 @@ import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 public class MainApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MainApplication.class, args);
+		// SpringApplication.run(MainApplication.class, args);
 		// System.out.println("Hello World!");
-		// ConfigurableApplicationContext ctx = SpringApplication.run(MainApplication.class, args);
-		// SedeRepository repSede = ctx.getBean(SedeRepository.class);
+		ConfigurableApplicationContext ctx = SpringApplication.run(MainApplication.class, args);
+		SedeRepository repSede = ctx.getBean(SedeRepository.class);
 		
-		// Sede sede1 = new Sede("MVX", "bbb", "ccc", "ddd", 1, "xx");
-		// repSede.save(sede1);
-		// repSede.save(new Sede("HMTJ", "bbb", "ccc", "ddd", 2, "yy"));
+		Sede sede1 = new Sede("MVX", "bbb", "ccc", "ddd", 1, "xx");
+		repSede.save(sede1);
+		repSede.save(new Sede("HMTJ", "bbb", "ccc", "ddd", 2, "yy"));
 
 		
 		// MembroRepository repMembro = ctx.getBean(MembroRepository.class);

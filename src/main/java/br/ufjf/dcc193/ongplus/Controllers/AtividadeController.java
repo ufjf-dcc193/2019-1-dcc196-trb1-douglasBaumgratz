@@ -16,11 +16,11 @@ import br.ufjf.dcc193.ongplus.Persistence.AtividadeRepository;
 public class AtividadeController {
 
     @Autowired
-    AtividadeRepository atividade;
+    AtividadeRepository atividades;
 
     @RequestMapping("atividade.html")
     public String atividade(Model model) {
-        model.addAttribute("atividade", atividade.findAll());
+        model.addAttribute("atividade", atividades.findAll());
         return "atividade/atividade";
     }
 
@@ -30,9 +30,8 @@ public class AtividadeController {
     }
     
     @RequestMapping("cadastrar_atividade.html")
-    public String cadastrar_atividade(Sede sede, String titulo, String descricao, String data_inicio, String data_fim,
-            Float total_horas) {
-        atividade.save(new Atividade(sede, titulo, descricao, data_inicio, data_fim, total_horas));
+    public String cadastrar_atividade(Atividade atividade) {
+        atividades.save(atividade);
         return "atividade/atividade_form";
     }
 

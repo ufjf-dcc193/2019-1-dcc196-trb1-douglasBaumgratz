@@ -20,11 +20,11 @@ import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 public class SedeController {
 
     @Autowired
-    SedeRepository sede;
+    SedeRepository sedes;
 
     @RequestMapping("sede.html")
     public String sede(Model model) {
-        model.addAttribute("sede", sede.findAll());
+        model.addAttribute("sede", sedes.findAll());
         return "sede/sede";
     }
 
@@ -33,11 +33,9 @@ public class SedeController {
         return "sede/sede_form";
     }
 
-
     @RequestMapping("cadastrar_sede.html")
-    public String cadastrar_sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone,
-            String endereco) {
-        sede.save(new Sede(nome_fantasia, estado, cidade, bairro, telefone, endereco));
+    public String cadastrar_sede(Sede sede) {
+        sedes.save(sede);
         return "sede/sede_form";
     }
 
@@ -48,11 +46,10 @@ public class SedeController {
 
     @RequestMapping(value = { "/excluir" }, method = RequestMethod.GET)
     public ModelAndView excluir_sede(@RequestParam(value = "id", required = true) Long id) {
-        System.out.println("HEEEELLOW");
-        sede.deleteById(id);
+        sedes.deleteById(id);
         ModelAndView mv = new ModelAndView();
-        List<Sede> sedes = sede.findAll();
-        mv.addObject("sede", sedes);
+        List<Sede> sed = sedes.findAll();
+        mv.addObject("sede", sed);
         mv.setViewName("sede/sede");
         return mv;
     }

@@ -1,5 +1,7 @@
 package br.ufjf.dcc193.ongplus.Models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +11,7 @@ import javax.persistence.Id;
  * Atividade
  */
 @Entity
-public class Atividade {
+public class Atividade implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Sede sede;
