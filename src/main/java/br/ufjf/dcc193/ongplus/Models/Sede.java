@@ -1,11 +1,14 @@
 package br.ufjf.dcc193.ongplus.Models;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Sede
@@ -22,8 +25,12 @@ public class Sede implements Serializable {
     private String bairro;
     private int telefone;
     private String endereco;
+    // @OneToMany(mappedBy = "sedeMembro", cascade = CascadeType.ALL)
+    // private Set<Membro> membros;
+    // @OneToMany(mappedBy = "sedeAtividade", cascade = CascadeType.ALL)
+    // private Set<Atividade> atividades;
 
-    public Sede() {     
+    public Sede() {
 
     }
 
@@ -34,6 +41,34 @@ public class Sede implements Serializable {
         this.bairro = bairro;
         this.telefone = telefone;
         this.endereco = endereco;
+    }
+
+    /**
+     * @return the atividades
+     */
+    public Set<Atividade> getAtividades() {
+        return atividades;
+    }
+
+    /**
+     * @return the membros
+     */
+    public Set<Membro> getMembros() {
+        return membros;
+    }
+
+    /**
+     * @param atividades the atividades to set
+     */
+    public void setAtividades(Set<Atividade> atividades) {
+        this.atividades = atividades;
+    }
+
+    /**
+     * @param membros the membros to set
+     */
+    public void setMembros(Set<Membro> membros) {
+        this.membros = membros;
     }
 
     @Override
