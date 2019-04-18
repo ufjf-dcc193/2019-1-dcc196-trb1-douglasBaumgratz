@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import br.ufjf.dcc193.ongplus.Models.Sede;
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 
@@ -27,14 +26,6 @@ public class SedeController {
         model.addAttribute("sede", sedes.findAll());
         return "sede/sede";
     }
-    // @RequestMapping("sede.html")
-    // public ModelAndView sede(Model model) {
-    //     ModelAndView mv = new ModelAndView();
-    //     mv.setViewName("sede");
-    //     List<Sede> sed = sedes.findAll();
-    //     mv.addObject("sede", sed);
-    //     return mv;
-    // }
 
     @RequestMapping("sede_form.html")
     public String sede_form() {
@@ -47,9 +38,12 @@ public class SedeController {
         return "sede/sede_form";
     }
 
-    @RequestMapping("editar_sede.html")
-    public String editar_sede(Long id) {
-        return "sede/sede_form";
+    @RequestMapping(value = { "/editar_sede" }, method = RequestMethod.GET)
+    public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {        
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("sede", sedes.getOne(id));
+        mv.setViewName("sede/sede_editar");
+        return mv;
     }
 
     @RequestMapping(value = { "/excluir" }, method = RequestMethod.GET)

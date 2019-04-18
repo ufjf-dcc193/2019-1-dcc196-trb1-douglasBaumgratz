@@ -30,7 +30,7 @@
                     <td>${rep.getData_entrada()}</td>
                     <td>${rep.getData_saida()}</td>                    
                     <td>
-                        <a class="btn btn-info btn-sm" href="#" role="button">
+                        <a class="btn btn-info btn-sm" href="/editar_membro?id=${rep.getId()}" role="button">
                             <i class="far fa-edit"></i>
                         </a>
                     </td>

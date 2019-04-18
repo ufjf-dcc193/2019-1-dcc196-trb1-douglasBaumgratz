@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.ufjf.dcc193.ongplus.Models.Atividade;
-import br.ufjf.dcc193.ongplus.Models.Sede;
 import br.ufjf.dcc193.ongplus.Persistence.AtividadeRepository;
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 
@@ -38,9 +40,13 @@ public class AtividadeController {
         return "atividade/atividade_form";
     }
 
-    @RequestMapping("editar_atividade.html")
-    public String editar_atividade(Long id) {
-        return "atividade/atividade_form";
+    @RequestMapping(value = { "/editar_atividade" }, method = RequestMethod.GET)
+    public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {        
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("atividade", atividades.getOne(id));
+        mv.addObject("sede", sedes.findAll());
+        mv.setViewName("atividade/atividade_editar");
+        return mv;
     }
 
 }

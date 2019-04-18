@@ -4,9 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.ufjf.dcc193.ongplus.Models.Membro;
-import br.ufjf.dcc193.ongplus.Models.Sede;
 import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 
@@ -38,9 +40,13 @@ public class MembroController {
         return "membro/membro_form";
     }
 
-    @RequestMapping("editar_membro.html")
-    public String editar_membro(Long id) {
-        return "membro/membro_form";
+    @RequestMapping(value = { "/editar_membro" }, method = RequestMethod.GET)
+    public ModelAndView carrega_membro_editar(@RequestParam(value = "id", required = true) Long id) {        
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("membro", membros.getOne(id));
+        mv.addObject("sede", sedes.findAll());
+        mv.setViewName("membro/membro_editar");
+        return mv;
     }
 
 }
