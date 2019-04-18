@@ -7,12 +7,12 @@
         <h1 align="center">Membros</h1>
     </div>
     <div class="card-body text-left">
-        <form class="text-left" method="POST">
+        <form class="text-left" action="cadastrar_membro.html" method="POST">
             <label>Sede:</label>
             <select name="sede" class="form-control form-group">
                 <option value="">...</option>
                 <c:forEach var="rep" items="${sede}">
-                    <option value="${rep.getNome_fantasia()}">
+                    <option value="${rep.id}">
                         ${rep.getNome_fantasia()}
                     </option>
                 </c:forEach>

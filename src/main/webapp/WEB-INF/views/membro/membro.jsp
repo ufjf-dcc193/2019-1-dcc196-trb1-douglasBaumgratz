@@ -13,7 +13,7 @@
 
         <table class="table">
             <tr>
-                <!-- <th>ID</th> -->
+                <th>Sede</th>
                 <th>Nome</th>
                 <th>Função</th>
                 <th>E-mail</th>
@@ -21,22 +21,9 @@
                 <th>Data saída</th>
                 <th>Ações</th>
             </tr>
-            <tr>
-                <td>a</td>
-                <!-- <td></td> -->
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>                    
-                <td>
-                    <a class="btn btn-info btn-sm" href="#" role="button">
-                        <i class="far fa-edit"></i>
-                    </a>
-                </td>
-            </tr>
             <c:forEach items="${membro}" var="rep">
                 <tr>
-                    <!-- <td>${rep.getId()}</td> -->
+                    <td>${rep.getSede().getNome_fantasia()}</td>
                     <td>${rep.getNome()}</td>
                     <td>${rep.getFuncao()}</td>
                     <td>${rep.getEmail()}</td>

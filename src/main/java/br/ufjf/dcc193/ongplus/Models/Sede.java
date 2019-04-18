@@ -22,23 +22,24 @@ public class Sede implements Serializable {
     private int telefone;
     private String endereco;
 
-    public Sede() {
-        
+    public Sede() {     
+
     }
 
     public Sede(String nome_fantasia, String estado, String cidade, String bairro, int telefone, String endereco) {
-        this.nome_fantasia=nome_fantasia;
-        this.estado=estado;
-        this.cidade=cidade;
-        this.bairro=bairro;      
-        this.telefone=telefone;
-        this.endereco=endereco;
+        this.nome_fantasia = nome_fantasia;
+        this.estado = estado;
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.telefone = telefone;
+        this.endereco = endereco;
     }
 
     @Override
     public String toString() {
         return super.toString();
     }
+
     /**
      * @return the id
      */

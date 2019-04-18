@@ -8,15 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.ufjf.dcc193.ongplus.Models.Atividade;
 import br.ufjf.dcc193.ongplus.Models.Sede;
 import br.ufjf.dcc193.ongplus.Persistence.AtividadeRepository;
+import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 
 /**
  * AtividadeController
  */
 @Controller
 public class AtividadeController {
-
     @Autowired
     AtividadeRepository atividades;
+    @Autowired
+    SedeRepository sedes;
 
     @RequestMapping("atividade.html")
     public String atividade(Model model) {
@@ -26,6 +28,7 @@ public class AtividadeController {
 
     @RequestMapping("atividade_form.html")
     public String atividade_form(Model model) {
+        model.addAttribute("sede", sedes.findAll());
         return "atividade/atividade_form";
     }
     

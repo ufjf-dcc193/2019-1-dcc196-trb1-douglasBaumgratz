@@ -3,9 +3,12 @@ package br.ufjf.dcc193.ongplus.Models;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  * Membro
@@ -15,6 +18,8 @@ public class Membro implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+    // @JoinColumn(name = "id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Sede sede;
     private String nome;
     private String funcao;
@@ -26,6 +31,14 @@ public class Membro implements Serializable {
 
     }
 
+    public Membro(String nome, String funcao, String email, String data_entrada, String data_saida) {        
+        this.nome = nome;
+        this.funcao = funcao;
+        this.email = email;
+        this.data_entrada = data_entrada;
+        this.data_saida = data_saida;
+    }
+    
     public Membro(Sede sede, String nome, String funcao, String email, String data_entrada, String data_saida) {
         this.sede = sede;
         this.nome = nome;

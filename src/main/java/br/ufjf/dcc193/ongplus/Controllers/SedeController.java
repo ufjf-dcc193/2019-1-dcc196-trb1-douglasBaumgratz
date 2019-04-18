@@ -27,6 +27,14 @@ public class SedeController {
         model.addAttribute("sede", sedes.findAll());
         return "sede/sede";
     }
+    // @RequestMapping("sede.html")
+    // public ModelAndView sede(Model model) {
+    //     ModelAndView mv = new ModelAndView();
+    //     mv.setViewName("sede");
+    //     List<Sede> sed = sedes.findAll();
+    //     mv.addObject("sede", sed);
+    //     return mv;
+    // }
 
     @RequestMapping("sede_form.html")
     public String sede_form() {

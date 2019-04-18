@@ -13,25 +13,27 @@
 
         <table class="table">
             <tr>
-                <!-- <th>ID</th> -->
+                <th>Sede</th>
                 <th>Título</th>
                 <th>Descrição</th>
                 <th>Data início</th>
                 <th>Data fim</th>
                 <th>Ações</th>
             </tr>
-            <tr>
-                <td>a</td>
-                <!-- <td></td> -->
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a class="btn btn-info btn-sm" href="#" role="button">
-                        <i class="far fa-edit"></i>
-                    </a>
-                </td>
-            </tr>
+            <c:forEach items="${atividade}" var="rep">
+                <tr>
+                    <td>${rep.getSede().getNome_fantasia()}</td>
+                    <td>${rep.getTitulo()}</td>
+                    <td>${rep.getDescricao()}</td>
+                    <td>${rep.getData_inicio()}</td>
+                    <td>${rep.getData_fim()}</td>                                     
+                    <td>
+                        <a class="btn btn-info btn-sm" href="#" role="button">
+                            <i class="far fa-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
         </table>
     </div>
     <div class="card-footer text-muted text-right">
