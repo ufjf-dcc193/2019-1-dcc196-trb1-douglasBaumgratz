@@ -15,7 +15,7 @@ public class HomeController {
     public String sobre() {
         return "sobre";
     }
-
+    
     @RequestMapping("relatorio.html")
     public String relatorio() {
         return "relatorio/relatorio";

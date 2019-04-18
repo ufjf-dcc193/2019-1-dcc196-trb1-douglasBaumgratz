@@ -28,7 +28,7 @@ public class AtividadeController {
     public String atividade_form(Model model) {
         return "atividade/atividade_form";
     }
-
+    
     @RequestMapping("cadastrar_atividade.html")
     public String cadastrar_atividade(Sede sede, String titulo, String descricao, String data_inicio, String data_fim,
             Float total_horas) {

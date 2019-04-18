@@ -60,7 +60,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
+				<configuration> 
 					<mainClass>br.ufjf.dcc193.ongplus.MainApplication</mainClass>
 				</configuration>
 			</plugin>

@@ -9,5 +9,4 @@ import br.ufjf.dcc193.ongplus.Models.Atividade;
 
 
 public interface AtividadeRepository extends JpaRepository<Atividade, Long>{
-    List<Atividade> findAll();
 }

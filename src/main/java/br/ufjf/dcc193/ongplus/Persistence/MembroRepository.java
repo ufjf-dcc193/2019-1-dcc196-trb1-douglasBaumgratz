@@ -9,5 +9,4 @@ import br.ufjf.dcc193.ongplus.Models.Membro;
 
 
 public interface MembroRepository extends JpaRepository<Membro, Long>{
-    List<Membro> findAll();
 }
