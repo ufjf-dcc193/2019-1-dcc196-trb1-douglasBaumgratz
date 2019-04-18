@@ -18,7 +18,7 @@
                 </c:forEach>
             </select>
             <label>Nome:</label>
-            <input type="text" name="name" class="form-control form-group">
+            <input type="text" name="nome" class="form-control form-group">
             <label>Função:</label>
             <input type="text" name="funcao" class="form-control form-group">
             <label>Email:</label>

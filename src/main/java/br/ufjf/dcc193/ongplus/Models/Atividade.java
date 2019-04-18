@@ -25,93 +25,93 @@ public class Atividade implements Serializable {
     private String descricao;
     private String data_inicio;
     private String data_fim;
-    private int horasAssistencial;
-    private int horasJuridica;
-    private int horasExecutiva;
-    private int horasFinanceira;
+    private int hora_assistencial;
+    private int hora_juridica;
+    private int hora_executiva;
+    private int hora_financeira;
 
     public Atividade() {
     }
 
-    public Atividade(String titulo, String descricao, String data_inicio, String data_fim, int horasAssistencial,
-            int horasJuridica, int horasExecutiva, int horasFinanceira) {
+    public Atividade(String titulo, String descricao, String data_inicio, String data_fim, int hora_assistencial,
+            int hora_juridica, int hora_executiva, int hora_financeira) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.data_inicio = data_inicio;
         this.data_fim = data_fim;
-        this.horasAssistencial = horasAssistencial;
-        this.horasJuridica = horasJuridica;
-        this.horasExecutiva = horasExecutiva;
-        this.horasFinanceira = horasFinanceira;
+        this.hora_assistencial = hora_assistencial;
+        this.hora_juridica = hora_juridica;
+        this.hora_executiva = hora_executiva;
+        this.hora_financeira = hora_financeira;
     }
 
     public Atividade(Sede sede, String titulo, String descricao, String data_inicio, String data_fim,
-            int horasAssistencial, int horasJuridica, int horasExecutiva, int horasFinanceira) {
+            int hora_assistencial, int hora_juridica, int hora_executiva, int hora_financeira) {
         this.sede = sede;
         this.titulo = titulo;
         this.descricao = descricao;
         this.data_inicio = data_inicio;
         this.data_fim = data_fim;
-        this.horasAssistencial = horasAssistencial;
-        this.horasJuridica = horasJuridica;
-        this.horasExecutiva = horasExecutiva;
-        this.horasFinanceira = horasFinanceira;
+        this.hora_assistencial = hora_assistencial;
+        this.hora_juridica = hora_juridica;
+        this.hora_executiva = hora_executiva;
+        this.hora_financeira = hora_financeira;
     }
 
     /**
-     * @return the horasAssistencial
+     * @return the hora_assistencial
      */
-    public int getHorasAssistencial() {
-        return horasAssistencial;
+    public int getHora_assistencial() {
+        return hora_assistencial;
     }
 
     /**
-     * @return the horasExecutiva
+     * @return the hora_executiva
      */
-    public int getHorasExecutiva() {
-        return horasExecutiva;
+    public int getHora_executiva() {
+        return hora_executiva;
     }
 
     /**
-     * @return the horasFinanceira
+     * @return the hora_financeira
      */
-    public int getHorasFinanceira() {
-        return horasFinanceira;
+    public int getHora_financeira() {
+        return hora_financeira;
     }
 
     /**
-     * @return the horasJuridica
+     * @return the hora_juridica
      */
-    public int getHorasJuridica() {
-        return horasJuridica;
+    public int getHora_juridica() {
+        return hora_juridica;
     }
 
     /**
-     * @param horasAssistencial the horasAssistencial to set
+     * @param hora_assistencial the hora_assistencial to set
      */
-    public void setHorasAssistencial(int horasAssistencial) {
-        this.horasAssistencial = horasAssistencial;
+    public void setHora_assistencial(int hora_assistencial) {
+        this.hora_assistencial = hora_assistencial;
     }
 
     /**
-     * @param horasExecutiva the horasExecutiva to set
+     * @param hora_executiva the hora_executiva to set
      */
-    public void setHorasExecutiva(int horasExecutiva) {
-        this.horasExecutiva = horasExecutiva;
+    public void setHora_executiva(int hora_executiva) {
+        this.hora_executiva = hora_executiva;
     }
 
     /**
-     * @param horasFinanceira the horasFinanceira to set
+     * @param hora_financeira the hora_financeira to set
      */
-    public void setHorasFinanceira(int horasFinanceira) {
-        this.horasFinanceira = horasFinanceira;
+    public void setHora_financeira(int hora_financeira) {
+        this.hora_financeira = hora_financeira;
     }
 
     /**
-     * @param horasJuridica the horasJuridica to set
+     * @param hora_juridica the hora_juridica to set
      */
-    public void setHorasJuridica(int horasJuridica) {
-        this.horasJuridica = horasJuridica;
+    public void setHora_juridica(int hora_juridica) {
+        this.hora_juridica = hora_juridica;
     }
 
     /**
@@ -170,8 +170,6 @@ public class Atividade implements Serializable {
         return titulo;
     }
 
-
-
     /**
      * @param data_fim the data_fim to set
      */
@@ -199,6 +197,5 @@ public class Atividade implements Serializable {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-
 
 }

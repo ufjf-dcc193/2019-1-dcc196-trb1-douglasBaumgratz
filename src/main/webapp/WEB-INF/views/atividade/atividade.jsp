@@ -31,10 +31,10 @@
                     <td>${rep.getDescricao()}</td>
                     <td>${rep.getData_inicio()}</td>
                     <td>${rep.getData_fim()}</td>                                     
-                    <td>${rep.getHorasAssistencial()} <i class="far fa-clock"></i></td>                                     
-                    <td>${rep.getHorasJuridica()} <i class="far fa-clock"></i></td>                                     
-                    <td>${rep.getHorasExecutiva()} <i class="far fa-clock"></i></td>                                     
-                    <td>${rep.getHorasFinanceira()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHora_assistencial()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHora_juridica()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHora_executiva()} <i class="far fa-clock"></i></td>                                     
+                    <td>${rep.getHora_financeira()} <i class="far fa-clock"></i></td>                                     
                     <td>
                         <a class="btn btn-info btn-sm" href="#" role="button">
                             <i class="far fa-edit"></i>

@@ -21,6 +21,14 @@
             <input type="text" name="titulo" class="form-control form-group">
             <label>Descrição:</label>
             <input type="text" name="descricao" class="form-control form-group">
+            <label>Hora Assistencial:</label>
+            <input type="number" name="hora_assistencial" class="form-control form-group">
+            <label>Hora Jurídica:</label>
+            <input type="number" name="hora_juridica" class="form-control form-group">
+            <label>Hora Executiva:</label>
+            <input type="number" name="hora_executiva" class="form-control form-group">
+            <label>Hora Financeira:</label>
+            <input type="number" name="hora_financeira" class="form-control form-group">
             <label>Data início:</label>
             <input name="data_inicio" type="text" class="form-control form-group datepicker">
             <label>Data fim:</label>
