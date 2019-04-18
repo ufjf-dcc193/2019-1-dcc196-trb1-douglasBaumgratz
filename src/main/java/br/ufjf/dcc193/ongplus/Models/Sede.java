@@ -1,6 +1,8 @@
 package br.ufjf.dcc193.ongplus.Models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -25,6 +27,21 @@ public class Sede implements Serializable {
     private String bairro;
     private int telefone;
     private String endereco;
+    // List<Atividade> atividade = new ArrayList<Atividade>();
+
+    // /**
+    //  * @return the atividade
+    //  */
+    // public List<Atividade> getAtividade() {
+    //     return atividade;
+    // }
+
+    // /**
+    //  * @param atividade the atividade to set
+    //  */
+    // public void setAtividade(List<Atividade> atividade) {
+    //     this.atividade = atividade;
+    // }
     // @OneToMany(mappedBy = "sedeMembro", cascade = CascadeType.ALL)
     // private Set<Membro> membros;
     // @OneToMany(mappedBy = "sedeAtividade", cascade = CascadeType.ALL)
@@ -43,33 +60,33 @@ public class Sede implements Serializable {
         this.endereco = endereco;
     }
 
-    /**
-     * @return the atividades
-     */
-    public Set<Atividade> getAtividades() {
-        return atividades;
-    }
+    // /**
+    // * @return the atividades
+    // */
+    // public Set<Atividade> getAtividades() {
+    // return atividades;
+    // }
 
-    /**
-     * @return the membros
-     */
-    public Set<Membro> getMembros() {
-        return membros;
-    }
+    // /**
+    // * @return the membros
+    // */
+    // public Set<Membro> getMembros() {
+    // return membros;
+    // }
 
-    /**
-     * @param atividades the atividades to set
-     */
-    public void setAtividades(Set<Atividade> atividades) {
-        this.atividades = atividades;
-    }
+    // /**
+    // * @param atividades the atividades to set
+    // */
+    // public void setAtividades(Set<Atividade> atividades) {
+    // this.atividades = atividades;
+    // }
 
-    /**
-     * @param membros the membros to set
-     */
-    public void setMembros(Set<Membro> membros) {
-        this.membros = membros;
-    }
+    // /**
+    // * @param membros the membros to set
+    // */
+    // public void setMembros(Set<Membro> membros) {
+    // this.membros = membros;
+    // }
 
     @Override
     public String toString() {

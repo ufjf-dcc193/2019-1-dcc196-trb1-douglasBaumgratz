@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import br.ufjf.dcc193.ongplus.Models.Atividade;
 import br.ufjf.dcc193.ongplus.Models.Sede;
+import br.ufjf.dcc193.ongplus.Persistence.AtividadeRepository;
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 
 /**
@@ -17,13 +20,31 @@ import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
  */
 @Controller
 public class SedeController {
-
     @Autowired
     SedeRepository sedes;
+    @Autowired
+    AtividadeRepository atividades;
 
     @RequestMapping("sede.html")
     public String sede(Model model) {
         model.addAttribute("sede", sedes.findAll());
+
+        //TODO: relatório
+        List<Sede> sede = sedes.findAll();
+        List<Atividade> atividade = atividades.findAll();
+        int total=0;
+        for (int i = 0; i < sede.size(); i++) {
+            for (int j = 0; j < atividade.size(); j++) {
+                if (sede.get(i).getNome_fantasia().equals(atividade.get(j).getSede().getNome_fantasia())) {
+                    total = atividade.get(j).getTotal_horas();
+                    System.out.println(
+                        "Sede: "+ sede.get(i).getNome_fantasia() 
+                        + " \nAtividade: "+atividade.get(j).getTitulo()
+                        + " \nTOTAL: "+total);
+                }
+            }            
+        }
+
         return "sede/sede";
     }
 
@@ -39,7 +60,7 @@ public class SedeController {
     }
 
     @RequestMapping(value = { "/editar_sede" }, method = RequestMethod.GET)
-    public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {        
+    public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {
         ModelAndView mv = new ModelAndView();
         mv.addObject("sede", sedes.getOne(id));
         mv.setViewName("sede/sede_editar");

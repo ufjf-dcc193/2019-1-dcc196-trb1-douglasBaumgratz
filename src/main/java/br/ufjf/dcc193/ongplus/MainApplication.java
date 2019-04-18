@@ -40,11 +40,11 @@ public class MainApplication {
 		repMembro.save(m3);
 
 		Atividade a1 = new Atividade(s1, "Programação OO", "Grupos para desenvolvimento", "01/06/2016", "01/06/2017", 10,
-				20, 30, 40);
+				20, 30, 50);
 		Atividade a2 = new Atividade(s1, "Java", "Estudos sobre JAVA", "01/06/2016", "01/06/2017", 10,
-				20, 30, 40);
+				20, 30, 60);
 		Atividade a3 = new Atividade(s2, "Spring", "Spring MVC", "01/06/2016", "01/06/2017", 10,
-				20, 30, 40);
+				20, 30, 70);
 		repAtividade.save(a1);
 		repAtividade.save(a2);
 		repAtividade.save(a3);

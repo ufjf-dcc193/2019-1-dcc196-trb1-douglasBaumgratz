@@ -16,7 +16,7 @@
             <c:forEach items="${relatorio}" var="rep">
                 <tr>
                     <td>${rep.getSede().getNome_fantasia()}</td>
-                    <td>${rep.getNome()}</td>
+                    <td>${rep.getTotal_horas()} <i class="far fa-clock"></i></td>
                 </tr>
             </c:forEach>            
         </table>

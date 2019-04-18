@@ -58,6 +58,9 @@ public class Atividade implements Serializable {
         this.hora_financeira = hora_financeira;
     }
 
+    public int getTotal_horas(){
+        return this.hora_assistencial+this.hora_juridica+this.hora_executiva+this.hora_financeira;
+    }
     /**
      * @return the hora_assistencial
      */
