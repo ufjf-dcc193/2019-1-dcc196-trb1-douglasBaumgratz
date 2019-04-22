@@ -30,9 +30,10 @@
                     <td>${rep.getData_entrada()}</td>
                     <td>${rep.getData_saida()}</td>                    
                     <td>
-                        <a class="btn btn-info btn-sm" href="/editar_membro?id=${rep.getId()}" role="button">
-                            <i class="far fa-edit"></i>
-                        </a>
+                        <form method="POST" action="membro_editar.html">
+                            <input type="hidden" name="id" value="${rep.getId()}">
+                            <button type="submit" class="btn btn-info btn-sm"><i class="far fa-edit"></i></button>
+                        </form>
                     </td>
                 </tr>
             </c:forEach>

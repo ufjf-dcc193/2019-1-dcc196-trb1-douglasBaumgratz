@@ -46,10 +46,10 @@ public class AtividadeController {
         return new RedirectView("atividade.html");
     }
 
-    @RequestMapping(value = { "/editar_atividade" }, method = RequestMethod.GET)
-    public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {
+    @RequestMapping("atividade_editar.html")
+    public ModelAndView carrega_sede_editar(Atividade atividade) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("atividade", atividades.getOne(id));
+        mv.addObject("atividade", atividades.getOne(atividade.getId()));
         mv.addObject("sede", sedes.findAll());
         mv.setViewName("atividade/atividade_editar");
         return mv;

@@ -47,10 +47,10 @@ public class SedeController {
         return new RedirectView("sede.html");
     }
 
-    @RequestMapping(value = { "/editar_sede" }, method = RequestMethod.GET)
-    public ModelAndView carrega_sede_editar(@RequestParam(value = "id", required = true) Long id) {
+    @RequestMapping("sede_editar.html")
+    public ModelAndView carrega_sede_editar(Sede sede) {
         ModelAndView mv = new ModelAndView();
-        mv.addObject("sede", sedes.getOne(id));
+        mv.addObject("sede", sedes.getOne(sede.getId()));
         mv.setViewName("sede/sede_editar");
         return mv;
     }
@@ -61,9 +61,11 @@ public class SedeController {
         return new RedirectView("sede.html");
     }
 
-    @RequestMapping(value = { "/excluir" }, method = RequestMethod.GET)
-    public ModelAndView excluir_sede(@RequestParam(value = "id", required = true) Long id) {
-        Sede sede = sedes.getOne(id);
+    @RequestMapping("sede_excluir.html")
+    public ModelAndView excluir_sede(Sede s) {
+        Sede sede = sedes.getOne(s.getId());
+        ModelAndView mv = new ModelAndView();
+
         List<Atividade> a = atividades.findAll();
         for (Atividade atividade : a) {
             if (atividade.getSede().getId() == sede.getId()) {
@@ -76,10 +78,8 @@ public class SedeController {
                 membros.deleteById(membro.getId());
             }
         }
-        sedes.deleteById(id);
-        ModelAndView mv = new ModelAndView();
-        List<Sede> sed = sedes.findAll();
-        mv.addObject("sede", sed);
+        sedes.deleteById(s.getId());
+        mv.addObject("sede", sedes.findAll());
         mv.setViewName("sede/sede");
         return mv;
     }

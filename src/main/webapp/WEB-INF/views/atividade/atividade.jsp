@@ -36,9 +36,10 @@
                     <td>${rep.getHora_executiva()} <i class="far fa-clock"></i></td>                                     
                     <td>${rep.getHora_financeira()} <i class="far fa-clock"></i></td>                                     
                     <td>
-                        <a class="btn btn-info btn-sm" href="/editar_atividade?id=${rep.getId()}" role="button">
-                            <i class="far fa-edit"></i>
-                        </a>
+                        <form method="POST" action="atividade_editar.html">
+                            <input type="hidden" name="id" value="${rep.getId()}">
+                            <button type="submit" class="btn btn-info btn-sm"><i class="far fa-edit"></i></button>
+                        </form>
                     </td>
                 </tr>
             </c:forEach>

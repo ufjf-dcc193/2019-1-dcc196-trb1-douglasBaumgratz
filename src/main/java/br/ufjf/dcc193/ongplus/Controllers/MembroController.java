@@ -41,10 +41,10 @@ public class MembroController {
         return new RedirectView("membro.html");
     }
 
-    @RequestMapping(value = { "/editar_membro" }, method = RequestMethod.GET)
-    public ModelAndView carrega_membro_editar(@RequestParam(value = "id", required = true) Long id) {        
+    @RequestMapping("membro_editar.html")
+    public ModelAndView carrega_membro_editar(Membro membro) {        
         ModelAndView mv = new ModelAndView();
-        mv.addObject("membro", membros.getOne(id));
+        mv.addObject("membro", membros.getOne(membro.getId()));
         mv.addObject("sede", sedes.findAll());
         mv.setViewName("membro/membro_editar");
         return mv;

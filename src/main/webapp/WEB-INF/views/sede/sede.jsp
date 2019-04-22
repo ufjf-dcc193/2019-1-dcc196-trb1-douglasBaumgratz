@@ -33,12 +33,16 @@
                     <td>${rep.getEstado()}</td>
                     <td>${rep.getTelefone()}</td>
                     <td>
-                        <a class="btn btn-info btn-sm" href="/editar_sede?id=${rep.getId()}" role="button">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger btn-sm" href="/excluir?id=${rep.getId()}" role="button">
-                            <i class="far fa-trash-alt"></i>
-                        </a>
+                        <div class="row">
+                            <form method="POST" action="sede_editar.html">
+                                <input type="hidden" name="id" value="${rep.getId()}">
+                                <button type="submit" class="btn btn-info btn-sm"><i class="far fa-edit"></i></button>
+                            </form>
+                            <form method="POST" action="sede_excluir.html">
+                                <input type="hidden" name="id" value="${rep.getId()}">
+                                <button type="submit" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             </c:forEach>
