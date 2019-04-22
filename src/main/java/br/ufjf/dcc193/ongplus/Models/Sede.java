@@ -30,9 +30,6 @@ public class Sede implements Serializable {
     private String endereco;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<Membro> membros;
-
-    @OneToMany(fetch = FetchType.LAZY)
     private List<Atividade> atividades;
 
     public Sede() {
@@ -54,13 +51,6 @@ public class Sede implements Serializable {
             total += atividades.get(i).getTotal_horas();
         }
         return total;
-    }
-
-    /**
-     * @param atividades the atividades to set
-     */
-    public void setAtividades(List<Atividade> atividades) {
-        this.atividades = atividades;
     }
 
     /**

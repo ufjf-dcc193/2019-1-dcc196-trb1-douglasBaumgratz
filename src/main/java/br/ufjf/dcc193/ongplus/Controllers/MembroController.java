@@ -36,9 +36,9 @@ public class MembroController {
     }
 
     @RequestMapping("cadastrar_membro.html")
-    public String cadastrar_membro(Membro membro) {
+    public RedirectView cadastrar_membro(Membro membro) {
         membros.save(membro);
-        return "membro/membro_form";
+        return new RedirectView("membro.html");
     }
 
     @RequestMapping(value = { "/editar_membro" }, method = RequestMethod.GET)

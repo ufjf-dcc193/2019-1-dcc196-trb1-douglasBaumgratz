@@ -1,5 +1,6 @@
 package br.ufjf.dcc193.ongplus.Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,13 +40,12 @@ public class AtividadeController {
     }
 
     @RequestMapping("cadastrar_atividade.html")
-    public String cadastrar_atividade(Atividade atividade) {
-        atividades.save(atividade);
-        // Sede s = atividade.getSede();
-        // s.getAtividades().add(atividade);
-        // System.out.println("AQUI: " + s.getAtividades().size());
-        // atividade.getSede().getAtividade().add(atividade);
-        return "atividade/atividade_form";
+    public RedirectView cadastrar_atividade(Atividade atividade) {
+        atividades.save(atividade);        
+        Sede s = atividade.getSede();
+        s.getAtividades().add(atividade);
+        sedes.save(s);        
+        return new RedirectView("atividade.html");
     }
 
     @RequestMapping(value = { "/editar_atividade" }, method = RequestMethod.GET)

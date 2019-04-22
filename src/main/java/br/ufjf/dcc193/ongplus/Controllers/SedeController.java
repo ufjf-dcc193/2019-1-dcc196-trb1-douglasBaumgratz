@@ -29,21 +29,6 @@ public class SedeController {
     @RequestMapping("sede.html")
     public String sede(Model model) {
         model.addAttribute("sede", sedes.findAll());
-
-        // TODO: relatório
-        List<Sede> sede = sedes.findAll();
-        List<Atividade> atividade = atividades.findAll();
-        int total = 0;
-        for (int i = 0; i < sede.size(); i++) {
-            for (int j = 0; j < atividade.size(); j++) {
-                if (sede.get(i).getNome_fantasia().equals(atividade.get(j).getSede().getNome_fantasia())) {
-                    total = atividade.get(j).getTotal_horas();
-                    System.out.println("Sede: " + sede.get(i).getNome_fantasia() + " \nAtividade: "
-                            + atividade.get(j).getTitulo() + " \nTOTAL: " + total);
-                }
-            }
-        }
-
         return "sede/sede";
     }
 
@@ -53,9 +38,9 @@ public class SedeController {
     }
 
     @RequestMapping("cadastrar_sede.html")
-    public String cadastrar_sede(Sede sede) {
+    public RedirectView cadastrar_sede(Sede sede) {
         sedes.save(sede);
-        return "sede/sede_form";
+        return new RedirectView("sede.html");
     }
 
     @RequestMapping(value = { "/editar_sede" }, method = RequestMethod.GET)
