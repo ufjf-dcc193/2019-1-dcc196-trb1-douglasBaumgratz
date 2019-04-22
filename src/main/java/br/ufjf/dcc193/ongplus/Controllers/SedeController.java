@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import br.ufjf.dcc193.ongplus.Models.Atividade;
 import br.ufjf.dcc193.ongplus.Models.Sede;
@@ -29,20 +30,18 @@ public class SedeController {
     public String sede(Model model) {
         model.addAttribute("sede", sedes.findAll());
 
-        //TODO: relatório
+        // TODO: relatório
         List<Sede> sede = sedes.findAll();
         List<Atividade> atividade = atividades.findAll();
-        int total=0;
+        int total = 0;
         for (int i = 0; i < sede.size(); i++) {
             for (int j = 0; j < atividade.size(); j++) {
                 if (sede.get(i).getNome_fantasia().equals(atividade.get(j).getSede().getNome_fantasia())) {
                     total = atividade.get(j).getTotal_horas();
-                    System.out.println(
-                        "Sede: "+ sede.get(i).getNome_fantasia() 
-                        + " \nAtividade: "+atividade.get(j).getTitulo()
-                        + " \nTOTAL: "+total);
+                    System.out.println("Sede: " + sede.get(i).getNome_fantasia() + " \nAtividade: "
+                            + atividade.get(j).getTitulo() + " \nTOTAL: " + total);
                 }
-            }            
+            }
         }
 
         return "sede/sede";
@@ -65,6 +64,12 @@ public class SedeController {
         mv.addObject("sede", sedes.getOne(id));
         mv.setViewName("sede/sede_editar");
         return mv;
+    }
+
+    @RequestMapping("sede_alterar.html")
+    public RedirectView alterar(Sede s) {
+        sedes.save(s);
+        return new RedirectView("sede.html");
     }
 
     @RequestMapping(value = { "/excluir" }, method = RequestMethod.GET)

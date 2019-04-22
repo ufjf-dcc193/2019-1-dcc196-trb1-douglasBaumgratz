@@ -7,7 +7,7 @@
         <h1 align="center">Atividades</h1>
     </div>
     <div class="card-body text-left">
-        <form class="text-left" action="cadastrar_atividade.html" method="POST">
+        <form class="text-left" action="atividade_alterar.html" method="POST">
             <label>Sede:</label>
             <select name="sede" class="form-control form-group" value="${atividade.getSede().getNome_fantasia()}" >
                 <option value="">...</option>

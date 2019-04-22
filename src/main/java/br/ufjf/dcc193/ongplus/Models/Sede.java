@@ -7,6 +7,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,25 +28,12 @@ public class Sede implements Serializable {
     private String bairro;
     private int telefone;
     private String endereco;
-    // List<Atividade> atividade = new ArrayList<Atividade>();
 
-    // /**
-    //  * @return the atividade
-    //  */
-    // public List<Atividade> getAtividade() {
-    //     return atividade;
-    // }
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Membro> membros;
 
-    // /**
-    //  * @param atividade the atividade to set
-    //  */
-    // public void setAtividade(List<Atividade> atividade) {
-    //     this.atividade = atividade;
-    // }
-    // @OneToMany(mappedBy = "sedeMembro", cascade = CascadeType.ALL)
-    // private Set<Membro> membros;
-    // @OneToMany(mappedBy = "sedeAtividade", cascade = CascadeType.ALL)
-    // private Set<Atividade> atividades;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Atividade> atividades;
 
     public Sede() {
 
@@ -60,33 +48,27 @@ public class Sede implements Serializable {
         this.endereco = endereco;
     }
 
-    // /**
-    // * @return the atividades
-    // */
-    // public Set<Atividade> getAtividades() {
-    // return atividades;
-    // }
+    public int totalHoras() {
+        int total = 0;
+        for (int i = 0; i < getAtividades().size(); i++) {
+            total += atividades.get(i).getTotal_horas();
+        }
+        return total;
+    }
 
-    // /**
-    // * @return the membros
-    // */
-    // public Set<Membro> getMembros() {
-    // return membros;
-    // }
+    /**
+     * @param atividades the atividades to set
+     */
+    public void setAtividades(List<Atividade> atividades) {
+        this.atividades = atividades;
+    }
 
-    // /**
-    // * @param atividades the atividades to set
-    // */
-    // public void setAtividades(Set<Atividade> atividades) {
-    // this.atividades = atividades;
-    // }
-
-    // /**
-    // * @param membros the membros to set
-    // */
-    // public void setMembros(Set<Membro> membros) {
-    // this.membros = membros;
-    // }
+    /**
+     * @return the atividades
+     */
+    public List<Atividade> getAtividades() {
+        return atividades;
+    }
 
     @Override
     public String toString() {

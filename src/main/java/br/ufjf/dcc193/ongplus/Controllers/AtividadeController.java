@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import br.ufjf.dcc193.ongplus.Models.Atividade;
 import br.ufjf.dcc193.ongplus.Models.Sede;
@@ -40,6 +41,9 @@ public class AtividadeController {
     @RequestMapping("cadastrar_atividade.html")
     public String cadastrar_atividade(Atividade atividade) {
         atividades.save(atividade);
+        // Sede s = atividade.getSede();
+        // s.getAtividades().add(atividade);
+        // System.out.println("AQUI: " + s.getAtividades().size());
         // atividade.getSede().getAtividade().add(atividade);
         return "atividade/atividade_form";
     }
@@ -53,13 +57,19 @@ public class AtividadeController {
         return mv;
     }
 
+    @RequestMapping("atividade_alterar.html")
+    public RedirectView alterar(Atividade a) {
+        atividades.save(a);
+        return new RedirectView("atividade.html");
+    }
     @RequestMapping("relatorio.html")
     public String relatorio(Model model) {
-        model.addAttribute("relatorio", atividades.findAll());
+        model.addAttribute("relatorio", sedes.findAll());
         // List<Sede> sede = sedes.findAll();
         // List<Atividade> atividade = atividades.findAll();
-        
-        // System.out.println("numero de atividades"+ sede.get(0).getAtividade().size());
+
+        // System.out.println("numero de atividades"+
+        // sede.get(0).getAtividade().size());
         return "relatorio/relatorio";
     }
 }

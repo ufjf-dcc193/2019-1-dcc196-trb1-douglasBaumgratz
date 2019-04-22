@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import br.ufjf.dcc193.ongplus.Models.Membro;
 import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
@@ -48,5 +49,9 @@ public class MembroController {
         mv.setViewName("membro/membro_editar");
         return mv;
     }
-
+    @RequestMapping("membro_alterar.html")
+    public RedirectView alterar(Membro m) {
+        membros.save(m);
+        return new RedirectView("membro.html");
+    }
 }
