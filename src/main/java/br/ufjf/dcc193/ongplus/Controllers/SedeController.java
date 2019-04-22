@@ -12,8 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import br.ufjf.dcc193.ongplus.Models.Atividade;
+import br.ufjf.dcc193.ongplus.Models.Membro;
 import br.ufjf.dcc193.ongplus.Models.Sede;
 import br.ufjf.dcc193.ongplus.Persistence.AtividadeRepository;
+import br.ufjf.dcc193.ongplus.Persistence.MembroRepository;
 import br.ufjf.dcc193.ongplus.Persistence.SedeRepository;
 
 /**
@@ -25,6 +27,8 @@ public class SedeController {
     SedeRepository sedes;
     @Autowired
     AtividadeRepository atividades;
+    @Autowired
+    MembroRepository membros;
 
     @RequestMapping("sede.html")
     public String sede(Model model) {
@@ -59,6 +63,19 @@ public class SedeController {
 
     @RequestMapping(value = { "/excluir" }, method = RequestMethod.GET)
     public ModelAndView excluir_sede(@RequestParam(value = "id", required = true) Long id) {
+        Sede sede = sedes.getOne(id);
+        List<Atividade> a = atividades.findAll();
+        for (Atividade atividade : a) {
+            if (atividade.getSede().getId() == sede.getId()) {
+                atividades.deleteById(atividade.getId());
+            }
+        }
+        List<Membro> m = membros.findAll();
+        for (Membro membro : m) {
+            if (membro.getSede().getId() == sede.getId()) {
+                membros.deleteById(membro.getId());
+            }
+        }
         sedes.deleteById(id);
         ModelAndView mv = new ModelAndView();
         List<Sede> sed = sedes.findAll();
