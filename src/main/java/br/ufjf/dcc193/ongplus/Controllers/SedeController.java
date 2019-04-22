@@ -66,4 +66,10 @@ public class SedeController {
         mv.setViewName("sede/sede");
         return mv;
     }
+
+    @RequestMapping("relatorio.html")
+    public String relatorio(Model model) {
+        model.addAttribute("relatorio", sedes.findAll());
+        return "relatorio/relatorio";
+    }
 }

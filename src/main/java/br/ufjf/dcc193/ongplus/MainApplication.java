@@ -48,17 +48,14 @@ public class MainApplication {
 		repAtividade.save(a1);
 		repAtividade.save(a2);
 		repAtividade.save(a3);
-
-		// MembroRepository repMembro = ctx.getBean(MembroRepository.class);
-		// Date date = new Date();
-		// repMembro.save(new Membro(sede1, "b", "c", "d", date, date));
-
-		// System.out.println("foiC"+repMembro.count());
+		
+		// Salvando atividades no List das respectivas sedes
+		s1.getAtividades().add(a1);
+		s1.getAtividades().add(a2);
+		s2.getAtividades().add(a3);		
+		repSede.save(s1);
+		repSede.save(s2);
+			
 	}
-	// public ConfigurableApplicationContext ssdad(String[] args){
-	// ConfigurableApplicationContext ctx =
-	// SpringApplication.run(MainApplication.class, args);
-	// return ctx;
-	// }
 
 }

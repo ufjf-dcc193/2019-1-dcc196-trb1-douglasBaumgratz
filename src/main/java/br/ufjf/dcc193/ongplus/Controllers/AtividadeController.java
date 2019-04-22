@@ -41,10 +41,8 @@ public class AtividadeController {
 
     @RequestMapping("cadastrar_atividade.html")
     public RedirectView cadastrar_atividade(Atividade atividade) {
-        atividades.save(atividade);        
-        Sede s = atividade.getSede();
-        s.getAtividades().add(atividade);
-        sedes.save(s);        
+        atividades.save(atividade);
+        addAtividadeSede(atividade);
         return new RedirectView("atividade.html");
     }
 
@@ -58,18 +56,15 @@ public class AtividadeController {
     }
 
     @RequestMapping("atividade_alterar.html")
-    public RedirectView alterar(Atividade a) {
-        atividades.save(a);
+    public RedirectView alterar(Atividade atividade) {
+        atividades.save(atividade);
+        addAtividadeSede(atividade);
         return new RedirectView("atividade.html");
     }
-    @RequestMapping("relatorio.html")
-    public String relatorio(Model model) {
-        model.addAttribute("relatorio", sedes.findAll());
-        // List<Sede> sede = sedes.findAll();
-        // List<Atividade> atividade = atividades.findAll();
 
-        // System.out.println("numero de atividades"+
-        // sede.get(0).getAtividade().size());
-        return "relatorio/relatorio";
+    public void addAtividadeSede(Atividade atividade) {
+        Sede sede = atividade.getSede();
+        sede.getAtividades().add(atividade);
+        sedes.save(sede);
     }
 }
