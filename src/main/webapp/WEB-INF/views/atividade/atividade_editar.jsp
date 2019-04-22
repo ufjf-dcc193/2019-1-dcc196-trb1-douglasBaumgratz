@@ -9,8 +9,7 @@
     <div class="card-body text-left">
         <form class="text-left" action="atividade_alterar.html" method="POST">
             <label>Sede:</label>
-            <select name="sede" class="form-control form-group" value="${atividade.getSede().getNome_fantasia()}" >
-                <option value="">...</option>
+            <select name="sede" class="form-control form-group" value="${atividade.getSede().getNome_fantasia()}" >                
                 <c:forEach var="rep" items="${sede}">
                     <option value="${rep.getId()}" value="${atividade.getSede().getNome_fantasia()}">
                         ${rep.getNome_fantasia()}
