@@ -9,11 +9,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * Sede
  */
 @Entity
+@Table(name = "sede")
 public class Sede implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -25,6 +27,9 @@ public class Sede implements Serializable {
     private String bairro;
     private int telefone;
     private String endereco;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Membro> membros;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<Atividade> atividades;

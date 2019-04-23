@@ -16,8 +16,8 @@
                 <th>Sede</th>
                 <th>Título</th>
                 <th>Descrição</th>
-                <th>Data início</th>
-                <th>Data fim</th>
+                <th>Data Início</th>
+                <th>Data Fim</th>
                 <th>Assistencial</th>
                 <th>Jurídica</th>
                 <th>Executiva</th>

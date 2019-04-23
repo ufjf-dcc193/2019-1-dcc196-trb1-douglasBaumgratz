@@ -20,6 +20,7 @@
                 <th>Bairro</th>
                 <th>Estado</th>
                 <th>Telefone</th>
+                <th>Total</th>
                 <th>Ações</th>
             </tr>
 
@@ -32,6 +33,7 @@
                     <td>${rep.getBairro()}</td>
                     <td>${rep.getEstado()}</td>
                     <td>${rep.getTelefone()}</td>
+                    <td>${rep.totalHoras()} <i class="far fa-clock"></i></td>
                     <td>
                         <div class="row">
                             <form method="POST" action="sede_editar.html">

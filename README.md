@@ -6,5 +6,5 @@ E-mail: douglas.baumgratz@gmail.com<br/>
 
 Instruções mínimas para funcionamento básico do sistema:
 
-Faça download ou o clone e em seguida rode o projeto.
+Faça download ou clone, em seguida rode o projeto.
 

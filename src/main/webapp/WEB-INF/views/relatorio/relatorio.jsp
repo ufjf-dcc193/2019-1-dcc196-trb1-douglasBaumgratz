@@ -7,7 +7,7 @@
     <div class="card-header">
         <h1 align="center">Relatório</h1>
     </div>
-    <div class="card-body text-left">
+    <div class="card-body text-left">        
         <table class="table">
             <tr>
                 <th>Sede</th>
@@ -18,7 +18,7 @@
                     <td>${rep.getNome_fantasia()}</td>
                     <td>${rep.totalHoras()} <i class="far fa-clock"></i></td>
                 </tr>
-            </c:forEach>            
+            </c:forEach>
         </table>
     </div>
     <div class="card-footer text-muted text-right">

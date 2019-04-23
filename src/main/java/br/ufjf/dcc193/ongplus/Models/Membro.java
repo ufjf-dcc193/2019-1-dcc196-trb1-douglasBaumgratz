@@ -8,17 +8,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * Membro
  */
 @Entity
+@Table(name = "membro")
 public class Membro implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-    // @JoinColumn(name = "id", nullable = false)
+    private Long id;    
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Sede sede;
     private String nome;

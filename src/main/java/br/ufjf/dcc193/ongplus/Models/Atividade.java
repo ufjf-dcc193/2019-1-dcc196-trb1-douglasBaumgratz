@@ -8,18 +8,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * Atividade
  */
 @Entity
+@Table(name = "atividade")
 public class Atividade implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-    // @JoinColumn(name = "id", nullable = false)
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private Long id;    
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)    
     private Sede sede;
     private String titulo;
     private String descricao;

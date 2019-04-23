@@ -17,8 +17,8 @@
                 <th>Nome</th>
                 <th>Função</th>
                 <th>E-mail</th>
-                <th>Data entrada</th>
-                <th>Data saída</th>
+                <th>Data Entrada</th>
+                <th>Data Saída</th>
                 <th>Ações</th>
             </tr>
             <c:forEach items="${membro}" var="rep">

@@ -63,7 +63,7 @@ public class SedeController {
     public ModelAndView excluir_sede(Sede s) {
         Sede sede = sedes.getOne(s.getId());
         ModelAndView mv = new ModelAndView();
-
+        sede.getAtividades().clear();
         List<Atividade> a = atividades.findAll();
         for (Atividade atividade : a) {
             if (atividade.getSede().getId() == sede.getId()) {
@@ -83,8 +83,10 @@ public class SedeController {
     }
 
     @RequestMapping("relatorio.html")
-    public String relatorio(Model model) {
+    public ModelAndView relatorio(Model model) {
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("relatorio/relatorio");
         model.addAttribute("relatorio", sedes.findAll());
-        return "relatorio/relatorio";
+        return mv;
     }
 }
