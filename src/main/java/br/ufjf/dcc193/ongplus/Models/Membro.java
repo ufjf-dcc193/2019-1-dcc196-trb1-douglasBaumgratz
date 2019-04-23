@@ -1,7 +1,5 @@
 package br.ufjf.dcc193.ongplus.Models;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,11 +13,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "membro")
-public class Membro implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Membro {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;    
+    private Long id;
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Sede sede;
     private String nome;
@@ -29,17 +26,16 @@ public class Membro implements Serializable {
     private String data_saida;
 
     public Membro() {
-
     }
 
-    public Membro(String nome, String funcao, String email, String data_entrada, String data_saida) {        
+    public Membro(String nome, String funcao, String email, String data_entrada, String data_saida) {
         this.nome = nome;
         this.funcao = funcao;
         this.email = email;
         this.data_entrada = data_entrada;
         this.data_saida = data_saida;
     }
-    
+
     public Membro(Sede sede, String nome, String funcao, String email, String data_entrada, String data_saida) {
         this.sede = sede;
         this.nome = nome;

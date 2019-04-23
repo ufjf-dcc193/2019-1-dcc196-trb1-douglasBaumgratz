@@ -1,6 +1,5 @@
 package br.ufjf.dcc193.ongplus.Models;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -16,8 +15,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "sede")
-public class Sede implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Sede {
+    // private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -27,9 +26,6 @@ public class Sede implements Serializable {
     private String bairro;
     private int telefone;
     private String endereco;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    private List<Membro> membros;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<Atividade> atividades;
@@ -53,6 +49,13 @@ public class Sede implements Serializable {
             total += atividades.get(i).getTotal_horas();
         }
         return total;
+    }
+
+    /**
+     * @param atividades the atividades to set
+     */
+    public void setAtividades(List<Atividade> atividades) {
+        this.atividades = atividades;
     }
 
     /**

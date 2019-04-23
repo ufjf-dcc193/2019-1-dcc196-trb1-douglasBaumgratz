@@ -1,7 +1,5 @@
 package br.ufjf.dcc193.ongplus.Models;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,8 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "atividade")
-public class Atividade implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class Atividade{    
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;    
