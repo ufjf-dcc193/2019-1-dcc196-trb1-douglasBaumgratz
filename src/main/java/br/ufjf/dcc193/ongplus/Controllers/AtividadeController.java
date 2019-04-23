@@ -53,7 +53,6 @@ public class AtividadeController {
     @RequestMapping("atividade_alterar.html")
     public RedirectView alterar(Atividade atividade) {
         atividades.save(atividade);
-        addAtividadeSede(atividade);
         return new RedirectView("atividade.html");
     }
 

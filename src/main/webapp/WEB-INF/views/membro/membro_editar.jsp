@@ -7,7 +7,8 @@
         <h1 align="center">Membros</h1>
     </div>
     <div class="card-body text-left">
-        <form class="text-left" action="membro_alterar.html" method="POST">
+        <form class="text-left" action="cadastrar_membro.html" method="POST">
+            <input type="hidden" name="id" value="${membro.getId()}">
             <label>Sede:</label>
             <select name="sede" class="form-control form-group" value="${membro.getSede().getNome_fantasia()}">                
                 <c:forEach var="rep" items="${sede}">

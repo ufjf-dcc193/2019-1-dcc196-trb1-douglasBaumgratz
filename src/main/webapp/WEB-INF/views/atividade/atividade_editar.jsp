@@ -8,6 +8,7 @@
     </div>
     <div class="card-body text-left">
         <form class="text-left" action="atividade_alterar.html" method="POST">
+            <input type="hidden" name="id" value="${atividade.getId()}">
             <label>Sede:</label>
             <select name="sede" class="form-control form-group" value="${atividade.getSede().getNome_fantasia()}" >                
                 <c:forEach var="rep" items="${sede}">

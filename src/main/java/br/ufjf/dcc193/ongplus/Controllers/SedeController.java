@@ -53,12 +53,6 @@ public class SedeController {
         return mv;
     }
 
-    @RequestMapping("sede_alterar.html")
-    public RedirectView alterar(Sede s) {
-        sedes.save(s);
-        return new RedirectView("sede.html");
-    }
-
     @RequestMapping("sede_excluir.html")
     public ModelAndView excluir_sede(Sede s) {
         Sede sede = sedes.getOne(s.getId());

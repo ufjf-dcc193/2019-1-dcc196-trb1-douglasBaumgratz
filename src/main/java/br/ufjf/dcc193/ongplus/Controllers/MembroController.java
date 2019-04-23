@@ -20,7 +20,7 @@ public class MembroController {
     MembroRepository membros;
     @Autowired
     SedeRepository sedes;
-    
+
     @RequestMapping("membro.html")
     public String membro(Model model) {
         model.addAttribute("membro", membros.findAll());
@@ -40,16 +40,11 @@ public class MembroController {
     }
 
     @RequestMapping("membro_editar.html")
-    public ModelAndView carrega_membro_editar(Membro membro) {        
+    public ModelAndView carrega_membro_editar(Membro membro) {
         ModelAndView mv = new ModelAndView();
         mv.addObject("membro", membros.getOne(membro.getId()));
         mv.addObject("sede", sedes.findAll());
         mv.setViewName("membro/membro_editar");
         return mv;
-    }
-    @RequestMapping("membro_alterar.html")
-    public RedirectView alterar(Membro m) {
-        membros.save(m);
-        return new RedirectView("membro.html");
     }
 }

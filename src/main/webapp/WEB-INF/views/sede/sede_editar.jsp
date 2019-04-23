@@ -6,7 +6,8 @@
         <h1 align="center">Sedes</h1>
     </div>
     <div class="card-body text-left">
-        <form class="text-left" action="sede_alterar.html" method="POST">
+        <form class="text-left" action="cadastrar_sede.html" method="POST">
+            <input type="hidden" name="id" value="${sede.getId()}">
             <label>Nome:</label>
             <input type="text" name="nome_fantasia" class="form-control form-group" value="${sede.getNome_fantasia()}">
             <label>Endereço:</label>
