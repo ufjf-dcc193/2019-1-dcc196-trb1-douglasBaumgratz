@@ -16,7 +16,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sede")
 public class Sede {
-    // private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -41,14 +40,6 @@ public class Sede {
         this.bairro = bairro;
         this.telefone = telefone;
         this.endereco = endereco;
-    }
-
-    public int totalHoras() {
-        int total = 0;
-        for (int i = 0; i < getAtividades().size(); i++) {
-            total += atividades.get(i).getTotal_horas();
-        }
-        return total;
     }
 
     /**
@@ -166,5 +157,13 @@ public class Sede {
      */
     public void setTelefone(int telefone) {
         this.telefone = telefone;
+    }
+
+    public int totalHoras() {
+        int total = 0;
+        for (int i = 0; i < getAtividades().size(); i++) {
+            total += atividades.get(i).getTotal_horas();
+        }
+        return total;
     }
 }

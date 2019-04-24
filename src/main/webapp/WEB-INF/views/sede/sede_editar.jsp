@@ -16,7 +16,7 @@
             <input name="cidade" type="text" class="form-control form-group" value="${sede.getCidade()}">
             <label>Bairro:</label>
             <input name="bairro" type="text" class="form-control form-group" value="${sede.getBairro()}">
-            <label>Estado:</label>
+            <label>Estado:</label>            
             <input name="estado" type="text" class="form-control form-group" value="${sede.getEstado()}">
             <label>Telefone:</label>
             <input name="telefone" type="text" class="form-control form-group" value="${sede.getTelefone()}">

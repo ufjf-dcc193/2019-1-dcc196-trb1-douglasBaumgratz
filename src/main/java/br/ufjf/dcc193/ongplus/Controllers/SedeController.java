@@ -1,7 +1,5 @@
 package br.ufjf.dcc193.ongplus.Controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -55,17 +53,15 @@ public class SedeController {
 
     @RequestMapping("sede_excluir.html")
     public ModelAndView excluir_sede(Sede s) {
-        Sede sede = sedes.getOne(s.getId());
         ModelAndView mv = new ModelAndView();
+        Sede sede = sedes.getOne(s.getId());
         sede.getAtividades().clear();
-        List<Atividade> a = atividades.findAll();
-        for (Atividade atividade : a) {
+        for (Atividade atividade : atividades.findAll()) {
             if (atividade.getSede().getId() == sede.getId()) {
                 atividades.deleteById(atividade.getId());
             }
         }
-        List<Membro> m = membros.findAll();
-        for (Membro membro : m) {
+        for (Membro membro : membros.findAll()) {
             if (membro.getSede().getId() == sede.getId()) {
                 membros.deleteById(membro.getId());
             }

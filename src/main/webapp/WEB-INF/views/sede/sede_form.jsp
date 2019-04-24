@@ -16,7 +16,7 @@
             <label>Bairro:</label>
             <input name="bairro" type="text" class="form-control form-group">
             <label>Estado:</label>
-            <input name="estado" type="text" class="form-control form-group">
+            <input name="estado" type="text" class="form-control form-group">            
             <label>Telefone:</label>
             <input name="telefone" type="text" class="form-control form-group">
             <div class="text-right"><br />
